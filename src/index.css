@@ -1,3 +1,71 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    /* font-size: 62.5%; */
+    height: 200px; /* Set a fixed height for the component */
+    overflow-y: auto;
+    scroll-behavior: smooth;
+  }
+  .container {
+    max-width: 105rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+    /* height: auto; */
+  }
+  /* ::-webkit-scrollbar {
+    width: 8px;
+    width: 8px;
+  } */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #8e8e8e #ffffff;
+  }
+  
+  /* Chrome, Edge and Safari */
+  *::-webkit-scrollbar {
+    width: 8px;
+    width: 8px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    border-radius: 20px;
+    background-color: #ffffff;
+  }
+  
+  *::-webkit-scrollbar-track:hover {
+    background-color: #ffffff;
+  }
+  
+  *::-webkit-scrollbar-track:active {
+    background-color: #ffffff;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background-color: #8e8e8e;
+  }
+  
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: #878787;
+  }
+  
+  *::-webkit-scrollbar-thumb:active {
+    background-color: #8e8e8e;
+  }
+  /* body {
+    margin: 0;
+    font: 300 11px/1.4 'Helvetica Neue', 'sans-serif';
+    color: #444;
+    background: rgb(226, 224, 224);
+    display: block;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  } */

@@ -14,7 +14,7 @@ function Model(props) {
   const { nodes, materials } = useGLTF('/Car.gltf')
   return (
     <group {...props} dispose={null}>
-      <group scale={0.01}>
+      <group scale={0.015}>
         <group position={[78.27, 38.02, 146.79]}>
           <mesh geometry={nodes.Wheel_FL_Texture_0.geometry} material={materials.Texture} rotation={[-Math.PI / 2, 0, 0]} />
         </group>

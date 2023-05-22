@@ -16,7 +16,7 @@ function Navbar(){
     <li><a href = "#about">About</a></li>
     <li><a href = "#projects">Projects</a></li>
     <li><a href = "#contact">Contact</a></li>
-  </ul> 
+        </ul>    
   <div className="navbar-buttons">
             <Link className="sign" >
               Sign In

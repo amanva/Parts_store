@@ -1,9 +1,37 @@
-.carContainer{
-    margin-top: 10rem;
+
+.hero-container{
+   background-image: linear-gradient(0deg,#cf3048 30%,#490710 70%);;
     width: 100%;
-    height: 400px;
+    height: 50rem;
 
 }
-.hero-container{
-    height: 400px;
+.hero-main{
+width: 100%;
+height: 30rem;
+
+&-title{
+   
+    display: flex;
+    height: 10rem;
+    max-width: 50rem;
+    margin: auto;
+    justify-content: center;
+
+    span{
+        font-size: 5rem;
+        font-weight: 900;
+        background-clip: text;
+        color: transparent;
+        background-image: linear-gradient(25deg,#ec1707,#ff00ea);
+    }
+    h1{
+        position: absolute;
+        color: white;
+        font-size: 4rem;
+        font-weight: 900;
+    }
+}
+&-rotatingCar{
+    height: 30rem;
+}
 }
