@@ -34,7 +34,7 @@ const Contact = () => {
     <div className="contact-container">
     <div className="contact-initial">
       <div className="contact-initial-text">
-      <h2>Want to get in touch with us?</h2>
+      <h2>Have questions?</h2>
       </div>
       </div>
       <div className="container">
@@ -46,27 +46,39 @@ const Contact = () => {
             they are equipped to provide you with the support and guidance you need. Whether you have inquiries about our products, 
             services, or any other aspect of our business, 
             our contact team is committed to delivering prompt and accurate responses.</p>
+            <a href="/">
+                <i className="fa-solid fa-mobile-screen"></i>&nbsp; (555) 234-5678
+              </a>
+              <a href="/">
+                <i className="fa-solid fa-envelope"></i>&nbsp; GearHeadGarage@gmail.com
+              </a>
+        <div className="contact-container-main-text-socials">
+          <h1> Find us: </h1>
+        <i className="fa-brands fa-facebook-f px-[16px] py-[13px] bg-[#f4f4f4] rounded-full cursor-pointer hover:bg-[#ff0336] ease-in duration-200 hover:text-white"></i>
+        <i className="fa-brands fa-twitter p-[13.5px] bg-[#f4f4f4] rounded-full cursor-pointer hover:bg-[#ff0336] ease-in duration-200 hover:text-white"></i>
+        <i className="fa-brands fa-instagram p-[13.5px] bg-[#f4f4f4] rounded-full cursor-pointer hover:bg-[#ff0336] ease-in duration-200 hover:text-white"></i>
+        <i className="fa-brands fa-pinterest-p p-[13.5px] bg-[#f4f4f4] rounded-full cursor-pointer hover:bg-[#ff0336] ease-in duration-200 hover:text-white"></i>
+        </div>
         </div>
       <div className="contact-container-main-form">
               <form>
                 <label>
-                  Full Name <b>*</b>
+                  Full Name 
                 </label>
                 <input type="text" placeholder='Jane Doe'></input>
 
                 <label>
-                  Email <b>*</b>
+                  Email 
                 </label>
                 <input type="email" placeholder="email@gmail.com"></input>
 
                 <label>
-                  Tell us about it <b>*</b>
+                  Comment 
                 </label>
                 <textarea placeholder="Enter message"></textarea>
 
                 <button type="submit">
-                  <i className="fa-solid fa-envelope-open-text"></i>&nbsp; Send
-                  Message
+                  <i className="fa-solid fa-envelope-circle-check"></i> Send
                 </button>
               </form>
             </div>
