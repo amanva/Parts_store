@@ -1,6 +1,7 @@
 import './Reviews.scss'
 import Person1 from '../../assets/person1.jpg'
 import Person2 from '../../assets/person2.jpg'
+import Begin from '../Begin/Begin';
 
 function Reviews(){
     const testimonials = [
@@ -18,7 +19,9 @@ function Reviews(){
       ];
 
     return(
+      
 <section className="reviews">
+<Begin names = "Reviews"/>
 <div className="container">
 <div className="reviews-container">
     <div className="reviews-text">

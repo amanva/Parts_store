@@ -1,13 +1,16 @@
 .reviews-container{
-    padding: 10rem 0;
+    padding: 5rem 0;
 
 }
 
 .reviews-text{
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
     text-align: center;
     margin-bottom: 2rem;
     h1{
-        font-size: 2rem;
+        font-size: 3rem;
     }
     p{
         font-size: 1.3rem;
@@ -29,9 +32,10 @@
   }
   
   .reviews-content {
-    font-size: 16px;
+    font-size: 1.5rem;
     line-height: 1.5;
     margin-bottom: 10px;
+    font-family: 'Oswald', sans-serif;
   }
   
   .reviews-author {

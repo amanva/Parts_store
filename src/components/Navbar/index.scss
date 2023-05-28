@@ -1,6 +1,6 @@
 .navbar{
-// position: absolute;
-// width: 100%;
+position: relative;
+z-index: 3;
 height: 3rem;
 display: flex;
 background-color: rgb(170, 164, 164);
