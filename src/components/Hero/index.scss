@@ -1,13 +1,16 @@
+.wspGallery{
+    background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
 
+}
 .hero-container{
-   background-image: linear-gradient(0deg,#cf3048 30%,#490710 70%);;
+   background-image: linear-gradient(0deg,black 30%,black 70%);;
     width: 100%;
     height: 50rem;
 
 }
 .hero-main{
 width: 100%;
-height: 30rem;
+height: 50rem;
 
 &-title{
    
@@ -35,3 +38,61 @@ height: 30rem;
     height: 30rem;
 }
 }
+// .gallery {
+//     border-radius: 50px;
+//     width: 300px;
+//     height: 250px;
+//     min-height: 50px;
+//     object-fit: cover;
+//     position: absolute;
+//     left: 10px;
+//     bottom: -100px;
+//   }
+//   .intake {
+//     border-radius: 50px;
+//     width: 300px;
+//     height: 250px;
+//     min-height: 50px;
+//     object-fit: cover;
+//     position: absolute;
+//     bottom: -100px;
+//     left: 320px;
+//   }
+//   .exhaust {
+//     border-radius: 50px;
+//     width: 300px;
+//     height: 250px;
+//     min-height: 50px;
+//     object-fit: cover;
+//     position: absolute;
+//     bottom: -100px;
+//     left: 630px;
+//   }
+//   .breaks {
+//     border-radius: 50px;
+//     width: 300px;
+//     height: 250px;
+//     min-height: 50px;
+//     object-fit: cover;
+//     position: absolute;
+//     bottom: -100px;
+//     left: 950px;
+//   }
+//   .rims {
+//     border-radius: 50px;
+//     width: 300px;
+//     height: 250px;
+//     min-height: 50px;
+//     object-fit: cover;
+//     position: absolute;
+//     bottom: -100px;
+//     left: 1280px;
+//   }
+  .wspGallery{
+    text-align: center;
+    padding: 50px;
+    font-size: 24px;
+    
+  }
+
+  
