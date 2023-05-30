@@ -9,6 +9,10 @@ const parts = ["Rims", "engine"]
 
 return (
   <div className="photos">
+    <div className="wording">
+    <h3>Pick your part now</h3>
+    <h2>Quick and easy selection</h2>
+    </div>
     <div className='galleryWrap'>
         {
           galleryImages.map((slide, index) => {
@@ -21,7 +25,7 @@ return (
                 <a href="" target = "_blank">
                 <img src={slide.img} alt='' />
                 </a>
-                <p>{slide.name}</p>
+                <p className="title">{slide.name}</p>
 
               </div>
             )
