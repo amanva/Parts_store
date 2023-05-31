@@ -30,7 +30,7 @@ function Reviews(){
 </div>
 <div className="reviews-box">
 {testimonials.map((testimonial, index) => (
-        <ReviewBox key={index} {...testimonial} />
+        <ReviewBox key={index} name={testimonial.name} image = {testimonial.image} review = {testimonial.review} />
       ))}
 </div>
     </div>
