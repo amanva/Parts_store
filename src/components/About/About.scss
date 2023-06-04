@@ -1,6 +1,6 @@
 .about{
     width: 100%;
-    height: 60rem;
+    height: 100rem;
     
 }
 .aboutGHG{
@@ -8,22 +8,133 @@
     padding-top: 30px;
     padding-bottom: 70px;
 }
-
-.aboutGrid{
-    display: grid;
-    grid-template-rows: repeat(2,minmax(0,auto));
-    grid-template-columns: repeat(2,minmax(0,500px));
-    text-align: center;
+// .gridContainer{
+//     display: flex;
+//     justify-content: center;
+// }
+// .aboutGrid{
+//     display: grid;
+//     grid-template-rows: repeat(2,minmax(0,auto));
+//     grid-template-columns: repeat(2,minmax(0,500px));
+//     text-align: center;
+//     padding-bottom: 20px;
+//     border: 1px solid;
+// }
+// .products-desc{
+//     display: flex;
+//     flex-direction: column;
+//     gap: 20px;
+//     justify-content: center;
+// }
+// .products{
+//     img{
+//     border-radius: 10%;
+//     }
+// }
+.flip-card {
+    perspective: 1000px;
+    width: 500px;
+    height: 400px;
+    padding-bottom: 100px;
+    margin: 25px 0;
+ 
+  }
+  
+  .flip-card-inner {
+    
+    transform-style: preserve-3d;
+    transition: .5s linear .1s;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    
+    transform: rotateY(-180deg);
+  }
+  
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-front {
+    // background-image: url('../../assets/parts.png');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+  
+  .flip-card-back {
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    padding-bottom: 20px;
-    // img{
-    //     width: 400px;
-    //     // height: 500px;
-    // }
-}
-.products-desc{
+    transition: -webkit-transform 0.90s cubic-bezier(.5, .3, .3, 1);
+    transform: rotateY(180deg) translateZ(60px) scale(.88);
+    
+  }
+  .flip-card-content {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.877);
+    padding: 35px 100px;
+    text-align: center;
+    
+    &-back{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgba(0, 0, 0, 0.877);
+    padding: 35px 100px;
+    text-align: center;
+    
+    
+    }
+  }
+  .flip-card:hover{
+    .flip-card-content, .flip-card-content-back{
+        
+        background-color: rgba(255,55,55, 0.75);
+    } 
+  }
+.aboutItems{
+    display: flex;
+}
+
+.clients{
+    width: 100%;
+    height: 500px;
+}
+.clients-box{
+    background-color: black;
+    height: 300px;
+    padding-left: 100px;
+    padding-top: 70px;
+    &-content{
+        display: flex;
+    }
+}
+.firstBox{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    padding-right: 30px;
+    margin-right: 20px;
+    &-innerContent{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    
+    }
 }

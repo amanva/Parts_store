@@ -1,12 +1,14 @@
 .navbar{
-position: relative;
-z-index: 3;
+position: fixed;
+width: 100%;
+z-index: 100;
 height: 3rem;
 display: flex;
-background-color: rgb(170, 164, 164);
+background-color: rgb(255, 255, 255);
 padding: 0 20px;
 justify-content: space-between;
 align-items: center;
+box-shadow: 0px 0px 5px 3px rgba(39, 39, 39, 0.87);
 &-imglogo{
     display: flex;
     align-items: center;
