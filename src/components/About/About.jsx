@@ -81,9 +81,53 @@ function About(){
     </div>
     </div>
     <div className="secondBox">
-    <div className="secondBox-innerContent">
-            <h2>Our Clients</h2>
-            <p>Take a look at the clients we work with the most.</p>
+    <div className="secondBox-outerContainer">
+        <div className="secondBox-outerContainer-inner1">
+        <div className="leftText">
+        <h2>Shops</h2>
+        <h2>20%</h2>
+        </div>
+        <div className="progressline">
+            <div className="h-full bg-red-600 rounded w-[30%]"></div>
+        </div>
+        <div className="leftText">
+        <h2>Auto dealerships</h2>
+        <h2>50%</h2>
+        </div>
+        <div className="progressline">
+            <div className="h-full bg-red-600 rounded w-[50%]"></div>
+        </div>
+        <div className="leftText">
+        <h2>Corporate clients</h2>
+        <h2>25%</h2>
+        </div>
+        <div className="progressline">
+            <div className="h-full bg-red-600 rounded w-[25%]"></div>
+        </div>
+        </div>
+        <div className="secondBox-outerContainer-inner2">
+        <div className="leftText">
+        <h2>personal clients</h2>
+        <h2>60%</h2>
+        </div>
+        <div className="progressline">
+            <div className="h-full bg-red-600 rounded w-[60%]"></div>
+        </div>
+        <div className="leftText">
+        <h2>Private clients</h2>
+        <h2>10%</h2>
+        </div>
+        <div className="progressline">
+            <div className="h-full bg-red-600 rounded w-[10%]"></div>
+        </div>
+        <div className="leftText">
+        <h2>Other clients</h2>
+        <h2>10%</h2>
+        </div>
+        <div className="progressline">
+            <div className="h-full bg-red-600 rounded w-[10%]"></div>
+        </div>
+        </div>
     </div>
     </div>
     </div>

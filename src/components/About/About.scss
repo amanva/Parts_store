@@ -117,8 +117,8 @@
     height: 500px;
 }
 .clients-box{
-    background-color: black;
-    height: 300px;
+  background-color: gray;
+    height: 330px;
     padding-left: 100px;
     padding-top: 70px;
     &-content{
@@ -130,11 +130,37 @@
     width: 200px;
     height: 200px;
     padding-right: 30px;
-    margin-right: 20px;
+    margin-right: 50px;
     &-innerContent{
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 50px;
     
     }
+}
+.secondBox{
+  width: 70%;
+  &-outerContainer{
+    display: flex;
+    justify-content: space-between;
+    gap: 150px;
+    &-inner1, &-inner2{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .leftText{
+        width: 500px;
+        display: flex;
+        justify-content: space-between; 
+      }
+      .progressline{
+        height: 8px;
+        background-color: lightgray;
+        position: relative;
+        border-radius: 4px;
+      }
+    }
+
+}
 }
