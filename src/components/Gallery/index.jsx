@@ -22,11 +22,12 @@ return (
                 key={index}
                 onClick={ () => handleOpenModal(index) }
               >
-                <a href="" target = "_blank">
                 <img src={slide.img} alt='' />
-                </a>
-                <p className="title">{slide.name}</p>
-
+                <div className= "nameForPart">
+                  <p className="title">{slide.name}</p>
+                  <p className="Text">This part is the engine</p>
+                  
+                </div>
               </div>
             )
           })
