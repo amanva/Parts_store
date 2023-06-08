@@ -3,44 +3,53 @@ import Model from "../Car";
 import { Canvas, useFrame } from 'react-three-fiber';
 import React, { Suspense, useRef } from "react";
 import { OrbitControls } from "@react-three/drei";
-import engine from "../../assets/engine.jpg";
-import intake from "../../assets/intake.jpg";
+import engine from "../../assets/wing.jpg";
+import intake from "../../assets/intake.png";
 import exhaust from "../../assets/exhaust.jpg";
-import breaks from "../../assets/break.jpg";
+import brakes from "../../assets/breaks.jpg";
 import rims from "../../assets/rims.jpg";
 import headlights from "../../assets/headlights.jpg";
 
 import WSPGallery from '../Gallery';
+import Company from "../Company"
 
 
 function Hero(){
   const galleryImages =[
     {
       img: engine,
-      name: 'engine'
+      name: 'ENGINE',
+      text: 'Used to improve performance'
     },
     {
       img: intake,
-      name: 'intake'
+      name: 'INTAKE',
+      text: 'Bring oxygen into the engine"s combustion chamber'
     },
     {
       img: exhaust,
-      name: 'exhaust'
+      name: 'EXHAUST',
+      text: 'Pipes the harmful exhuast fumes away from engine'
     },
     {
-      img: breaks,
-      name: 'breaks'
+      img: brakes,
+      name: 'BRAKES'
     },
     {
       img: rims,
-      name: 'rims',
+      name: 'RIMS',
     },
     {
       img: headlights,
-      name: 'headlights'
+      name: 'HEADLIGHTS'
     }
     
   ]
+  const containerStyles = {
+    width: "500px",
+    height: "280px",
+    margin: "0 auto",
+  };
  
     return (
     <>
@@ -79,12 +88,13 @@ function Hero(){
     <div className="wspGallery">
       <WSPGallery galleryImages = {galleryImages}/>
     </div>
-
+   
+    <div>
+        <Company slides={galleryImages}/>
+    </div>
     </section>
     </>
     )
 }
-
-
 
 export default Hero
