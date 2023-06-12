@@ -8,10 +8,11 @@ import intake from "../../assets/intake.png";
 import exhaust from "../../assets/exhaust.jpg";
 import brakes from "../../assets/breaks.jpg";
 import rims from "../../assets/rims.jpg";
-import headlights from "../../assets/headlights.jpg";
+import rearLights from "../../assets/headlights.jpg";
 
 import WSPGallery from '../Gallery';
 import Company from "../Company"
+import { Color } from 'three';
 
 
 function Hero(){
@@ -33,23 +34,22 @@ function Hero(){
     },
     {
       img: brakes,
-      name: 'BRAKES'
+      name: 'BRAKES',
+      text: 'Enable the vehicle to slow down or stop'
     },
     {
       img: rims,
       name: 'RIMS',
+      text: 'Provide leverage for your vehicle'
     },
     {
-      img: headlights,
-      name: 'HEADLIGHTS'
+      img: rearLights,
+      name: 'REARLIGHTS',
+      text: 'Provide safety at night'
     }
     
   ]
-  const containerStyles = {
-    width: "500px",
-    height: "280px",
-    margin: "0 auto",
-  };
+  
  
     return (
     <>
@@ -78,17 +78,10 @@ function Hero(){
     </div>
    
     </div>
-    {/* <div className="gallery-photos">
-      <img src = {engine} class = "gallery"></img>
-      <img src = {intake} class = "intake"></img>
-      <img src = {exhaust} class = "exhaust"></img>
-      <img src = {breaks} class = "breaks"></img>
-      <img src = {rims} class = "rims"></img>
-    </div> */}
+   
     <div className="wspGallery">
       <WSPGallery galleryImages = {galleryImages}/>
     </div>
-   
     <div>
         <Company slides={galleryImages}/>
     </div>

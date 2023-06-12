@@ -1,9 +1,9 @@
 .photos{
-  background-color: e0e0e0;
-  padding: 100px;
+  padding: 50px;
 .galleryWrap {
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    // grid-template-columns: auto auto auto auto auto auto;
     position: relative;
     gap:.0001px;
   }
@@ -16,12 +16,12 @@
     border: .5px solid gray;
     background-color: white;
     justify-items: center;
+    align-items: center;
   }
   
   .galleryWrap .single img {
     width: 200px;
     height: 180px;
-    padding-top: 20px;
   }
 
   .nameForPart{

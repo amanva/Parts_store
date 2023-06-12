@@ -5,7 +5,7 @@ import './index.scss'
 
 const ImageSlider = ({ slides }) => {
   const [current, setCurrent] = useState(0);
-  const length = slides.length;
+  const length = slides.length-1;
 
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
@@ -21,6 +21,9 @@ const ImageSlider = ({ slides }) => {
 
   return (
     <section className='slider'>
+      <div className='display-text'>
+        <h1>Choose from one of our great clients for the awesome parts they provide</h1>
+      </div>
       <FaArrowAltCircleLeft className='left-arrow' onClick={prevSlide} />
       <FaArrowAltCircleRight className='right-arrow' onClick={nextSlide} />
       {SliderData.map((slide, index) => {
@@ -30,7 +33,7 @@ const ImageSlider = ({ slides }) => {
             key={index}
           >
             {index === current && (
-              <img src={slide.image} alt='travel image' className='image' />
+              <img src={slide.image} alt='Car Company Image' className='image' />
             )}
           </div>
         );
