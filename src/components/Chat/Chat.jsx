@@ -6,7 +6,10 @@ import { MainContainer, ChatContainer, MessageList, Message, MessageInput, Typin
 import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
 
-
+const API_KEY = "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";
+const systemMessage = { 
+  "role": "system", "content": "Act as an autoparts expert for an autoparts website. You should be able to answer questions related to various car makes, models, and autoparts. You should provide accurate and helpful information about different types of autoparts, their compatibility with specific vehicles, installation procedures, common issues, troubleshooting tips, and recommendations for quality autopart brands. You should also be knowledgeable about maintenance schedules, warranty information, and any specific requirements or considerations for different car models. The goal is to provide users with reliable autoparts advice and support, helping them make informed decisions and solve autoparts-related problems effectively."
+}
 const Chat = () => {
     // const configuration = new Configuration({
     //     organization: "org-XMwLR8diXbhut99v1UOqA3Ga",
@@ -35,14 +38,67 @@ const Chat = () => {
         setMessages(newMessages);
     
         setIsTyping(true);
+        await processMessageToChatGPT(newMessages);
+    };
+    async function processMessageToChatGPT(chatMessages) { // messages is an array of messages
+      // Format messages for chatGPT API
+      // API is expecting objects in format of { role: "user" or "assistant", "content": "message here"}
+      // So we need to reformat
+  
+      let apiMessages = chatMessages.map((messageObject) => {
+        let role = "";
+        if (messageObject.sender === "ChatGPT") {
+          role = "assistant";
+        } else {
+          role = "user";
+        }
+        return { role: role, content: messageObject.message}
+      });
+      const apiRequestBody = {
+        "model": "gpt-3.5-turbo",
+        "messages": [
+          systemMessage,  // The system message DEFINES the logic of our chatGPT
+          ...apiMessages // The messages from our chat with ChatGPT
+        ]
+      }
+  
+      await fetch("https://api.openai.com/v1/chat/completions", 
+      {
+        method: "POST",
+        headers: {
+          "Authorization": "Bearer " + API_KEY,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(apiRequestBody)
+      }).then((data) => {
+        return data.json();
+      }).then((data) => {
+        console.log(data);
+        setMessages([...chatMessages, {
+          message: data.choices[0].message.content,
+          sender: "ChatGPT"
+        }]);
+        setIsTyping(false);
+      });
+    }
+    // floating button
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleToggle = () => {
+      setIsOpen(!isOpen);
     };
     return (
+      <div className="floating-button-container">
+        <div className={`floating-button ${isOpen ? 'open' : ''}`} onClick={handleToggle}>
+      <span className="button-icon">{isOpen ? <i class="fa-solid fa-circle-xmark text-6xl"></i> : <i class="fa-sharp fa-solid fa-comments"></i>}</span>
+    </div>
+    {isOpen && (
       <div className='chat'>
         <MainContainer>
           <ChatContainer>       
             <MessageList 
               scrollBehavior="smooth" 
-              typingIndicator={isTyping ? <TypingIndicator content="ChatGPT is typing" /> : null}
+              typingIndicator={isTyping ? <TypingIndicator content="AutoGPT is typing" /> : null}
             >
               {messages.map((message, i) => {
                 console.log(message)
@@ -52,6 +108,8 @@ const Chat = () => {
             <MessageInput placeholder="Type message here" onSend={handleSend} />        
           </ChatContainer>
         </MainContainer>
+      </div>
+      )}
       </div>
     );
   };
