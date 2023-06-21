@@ -29,7 +29,9 @@ return (
                 <p className="Text">{slide.text}</p>
                 
                 </div>
+                <div className ="image">
                   <img src={slide.img} alt='' />
+                  </div>
                 
               </div>
             )

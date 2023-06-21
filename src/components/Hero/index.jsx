@@ -3,7 +3,7 @@ import Model from "../Car";
 import { Canvas, useFrame } from 'react-three-fiber';
 import React, { Suspense, useRef } from "react";
 import { OrbitControls } from "@react-three/drei";
-import engine from "../../assets/wing.jpg";
+import Spoiler from "../../assets/wing.jpg";
 import intake from "../../assets/intake.png";
 import exhaust from "../../assets/exhaust.jpg";
 import brakes from "../../assets/breaks.jpg";
@@ -18,9 +18,9 @@ import { Color } from 'three';
 function Hero(){
   const galleryImages =[
     {
-      img: engine,
-      name: 'ENGINE',
-      text: 'Used to improve performance'
+      img: Spoiler,
+      name: 'Spoiler',
+      text: 'Used to add downforce to vehicle'
     },
     {
       img: intake,

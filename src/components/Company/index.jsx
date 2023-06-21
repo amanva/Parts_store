@@ -35,6 +35,9 @@ const ImageSlider = ({ slides }) => {
             {index === current && (
               <img src={slide.image} alt='Car Company Image' className='image' />
             )}
+            {index === current && (
+              <img src={slide.image2} alt='Car Company Image' className='image' />
+            )}
           </div>
         );
       })}

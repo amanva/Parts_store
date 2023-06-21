@@ -1,22 +1,29 @@
 export const SliderData = [
   {
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/2048px-BMW.svg.png'
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/2048px-BMW.svg.png',
+    image2: 'https://freepngimg.com/thumb/bmw/60160-car-bmw-m3-series-free-transparent-image-hd.png'
   },
   {
     image:
-      'https://upload.wikimedia.org/wikipedia/en/thumb/d/df/Lamborghini_Logo.svg/1200px-Lamborghini_Logo.svg.png'
+      'https://upload.wikimedia.org/wikipedia/en/thumb/d/df/Lamborghini_Logo.svg/1200px-Lamborghini_Logo.svg.png',
+    image2:'https://1000logos.net/wp-content/uploads/2019/12/Chevrolet-logo.png'
   },
   {
     image:
-      'https://1000logos.net/wp-content/uploads/2018/02/Porsche-Logo.png'
+      'https://1000logos.net/wp-content/uploads/2018/02/Porsche-Logo.png',
+      image2:'https://1000logos.net/wp-content/uploads/2021/04/Ferrari-logo.png'
   },
   {
     image:
-      'https://global.toyota/pages/global_toyota/mobility/toyota-brand/emblem_ogp_001.png'
+      'https://global.toyota/pages/global_toyota/mobility/toyota-brand/emblem_ogp_001.png',
+      image2: 'https://cdn.freebiesupply.com/logos/large/2x/nissan-6-logo-svg-vector.svg'
+
   },
   {
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Volkswagen_logo_2019.svg/2048px-Volkswagen_logo_2019.svg.png'
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Volkswagen_logo_2019.svg/2048px-Volkswagen_logo_2019.svg.png',
+    image2: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Subaru_%282019%29.svg/1200px-Subaru_%282019%29.svg.png'
+
   },
 ];
