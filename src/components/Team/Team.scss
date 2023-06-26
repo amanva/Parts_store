@@ -48,7 +48,6 @@
         height: 8rem;
         border-radius: 50%;
     }
-    // margin-bottom: 30px;
     
   }
   
@@ -79,4 +78,10 @@
     justify-content: center;
     gap: 20px;
     top: -80px;
+  }
+
+  .team-innerBox:hover{
+    background-color: red;
+    color: white;
+    transition: background-color 1s ease-out 50ms, color .3s ease-out 10ms;
   }
