@@ -1,0 +1,57 @@
+.register{
+  background-color: #f0f2f4;
+  height: 59.7rem;
+}
+.auth-form-container, .register-form{
+    display: flex;
+    flex-direction: column;
+    
+} 
+.register-form{
+  
+  gap: 10px;
+}
+.register-box{
+  background-color: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  h2{
+    text-align: center;
+  }
+}
+.auth-form-container{
+  display: flex;
+  align-items: center;
+  padding-top: 60px;
+  
+}
+.userName, .userEmail, .pass{
+    display: flex;
+    flex-direction: column;
+}
+label {
+  text-align: left;
+  padding: 0.25rem 0;
+}
+input {
+    padding: 1rem;
+    border: solid 1px;
+    border-radius: 10px;
+    margin: 0.5rem 0;
+    height: 50px;
+  }
+  button {
+    border: none;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #7439db;
+  }
+  
+  .link-btn {
+    background: none;
+    text-decoration: underline;
+  }

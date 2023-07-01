@@ -4,6 +4,7 @@ import React, { useState, useEffect} from 'react';
 import Parts from '../../assets/parts.png';
 import Price from '../../assets/price.png';
 import Return from '../../assets/return.jpg';
+import Footer from '../Footer/Footer';
 // import fetch from 'node-fetch';
 import { Color } from 'three';
 function About(){
@@ -77,6 +78,7 @@ async function search(){
 }
 
     return(
+        <>
 <section className="about">
 <Begin names = "About"/>
 <div className="container">
@@ -158,8 +160,8 @@ async function search(){
 </div>
 
 </section>
-
- 
+<Footer/>
+</>
 
     );
 }

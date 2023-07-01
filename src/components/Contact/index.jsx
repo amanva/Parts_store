@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './index.scss'
-
+import Footer from '../Footer/Footer';
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -28,6 +28,7 @@ const Contact = () => {
   };
 
   return (
+    <>
     <section className="contact">
     <div className="contact-container">
     <div className="contact-initial">
@@ -84,6 +85,8 @@ const Contact = () => {
     </div>
     </div>
     </section>
+    <Footer></Footer>
+    </>
   );
 };
 

@@ -2,7 +2,7 @@ import './Team.scss'
 import Person1 from '../../assets/person1.jpg'
 import Person2 from '../../assets/person2.jpg'
 import Begin from '../Begin/Begin';
-
+import Footer from '../Footer/Footer';
 function Team(){
     const testimonials = [
         {
@@ -21,7 +21,7 @@ function Team(){
       ];
 
     return(
-      
+<>
 <section className="team">
 <Begin names = "team"/>
 <div className="container">
@@ -41,7 +41,8 @@ function Team(){
 
 
 </section>
-
+<Footer></Footer>
+</>
 
 
     )

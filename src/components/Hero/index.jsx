@@ -9,6 +9,7 @@ import exhaust from "../../assets/exhaust.jpg";
 import brakes from "../../assets/breaks.jpg";
 import rims from "../../assets/rims.jpg";
 import rearLights from "../../assets/headlights.jpg";
+import Footer from '../Footer/Footer';
 
 import WSPGallery from '../Gallery';
 import Company from "../Company"
@@ -86,6 +87,7 @@ function Hero(){
         <Company slides={galleryImages}/>
     </div>
     </section>
+    <Footer/>
     </>
     )
 }
