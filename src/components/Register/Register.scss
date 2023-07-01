@@ -12,8 +12,10 @@
   gap: 10px;
 }
 .register-box{
+  
   background-color: white;
-  padding: 2rem;
+  margin-top: 30px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   width: 400px;
@@ -28,22 +30,56 @@
   
 }
 .userName, .userEmail, .pass{
+  position: relative;
     display: flex;
     flex-direction: column;
+    padding-bottom: 20px;
 }
 label {
-  text-align: left;
-  padding: 0.25rem 0;
+  position: absolute;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+.userName:focus-within > label{
+  color: rgb(177, 177, 177);
+  top: -20px;
+  left: 10px;
+  background-color: white;
+  padding: 3px;
+  font-size: 12px;
+  transition-duration: .6s;
+  transition-property: top,padding,left,display,font-size,background-color,color;
+}
+.userEmail:focus-within > label{
+  color: rgb(177, 177, 177);
+  top: -20px;
+  left: 10px;
+  background-color: white;
+  padding: 3px;
+  font-size: 12px;
+  transition-duration: .6s;
+  transition-property: top,padding,left,display,font-size,background-color,color;
+}
+.pass:focus-within > label{
+  color: rgb(177, 177, 177);
+  top: -20px;
+  left: 10px;
+  background-color: white;
+  padding: 3px;
+  font-size: 12px;
+  transition-duration: .6s;
+  transition-property: top,padding,left,display,font-size,background-color,color;
 }
 input {
-    padding: 1rem;
+    // padding: 1rem;
     border: solid 1px;
     border-radius: 10px;
-    margin: 0.5rem 0;
     height: 50px;
   }
+  input::placeholder {
+    padding: 10px;
+  }
   button {
-    border: none;
     background-color: white;
     padding: 20px;
     border-radius: 10px;
