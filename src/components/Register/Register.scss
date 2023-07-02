@@ -70,14 +70,21 @@ label {
   transition-duration: .6s;
   transition-property: top,padding,left,display,font-size,background-color,color;
 }
+.valueapply {
+  color: rgb(177, 177, 177);
+  top: -20px;
+  left: 10px;
+  background-color: white;
+  padding: 3px;
+  font-size: 12px;
+  transition-duration: .6s;
+  transition-property: top,padding,left,display,font-size,background-color,color;
+}
 input {
-    // padding: 1rem;
     border: solid 1px;
     border-radius: 10px;
     height: 50px;
-  }
-  input::placeholder {
-    padding: 10px;
+    padding-left: 10px !important;
   }
   button {
     background-color: white;

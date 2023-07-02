@@ -9,26 +9,27 @@ function Register() {
 
 	const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(email);
+        console.log(name);
     }
+
 return(
 <>
 <section className="register">
     <div className="container">
 <div className="auth-form-container">
     <div className="register-box">
-            <h2>Create an account</h2>
+            <h2 className="mb-7">Create an account</h2>
         <form className="register-form" onSubmit={handleSubmit}>
             <div className="userName">
-            <label for="userName">First Name</label>
+            <label className={name ? 'valueapply' : ''} for="userName">First Name</label>
             <input value={name} name="userName" onChange={(e) => setName(e.target.value)} id="userName" placeholder=" " />
             </div>
             <div className="userEmail">
-            <label htmlFor="email">Email</label>
-            <input value={email} onChange={(e) => setEmail(e.target.value)}type="email" placeholder=" " id="email" name="email" />
+            <label className={email ? 'valueapply' : ''} htmlFor="email">Email</label>
+            <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder=" " id="email" name="email" />
             </div>
             <div className="pass">
-            <label htmlFor="password">Password</label>
+            <label className={pass ? 'valueapply' : ''} htmlFor="password">Password</label>
             <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder=" " id="password" name="password" />
             </div>
             <button type="submit">Log In</button>
