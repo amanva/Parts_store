@@ -8,6 +8,7 @@ import About from "./components/About/About";
 import Team from "./components/Team/Team";
 import Chat from "./components/Chat/Chat";
 import Register from "./components/Register/Register";
+import Login from "./components/Login/Login";
 function App() {
 
 
@@ -22,6 +23,7 @@ function App() {
         <Route path = "reviews" element={<Reviews></Reviews>} />
         <Route path = "team" element={<Team></Team>} />
         <Route path = "contact" element={<Contact></Contact>} />
+        <Route path = "login" element={<Login></Login>} />
         <Route path = "register" element={<Register></Register>} />
       </Routes>
       <Chat/>

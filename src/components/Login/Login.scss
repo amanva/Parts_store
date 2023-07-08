@@ -1,0 +1,84 @@
+.login{
+    background-color: #f0f2f4;
+    height: 59.7rem;
+  }
+  .auth-form-container, .login-form{
+      display: flex;
+      flex-direction: column;
+      
+  } 
+  .login-form{
+    
+    gap: 10px;
+  }
+  .login-box{
+    
+    background-color: white;
+    margin-top: 30px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    h2{
+      text-align: center;
+    }
+  }
+  .auth-form-container{
+    display: flex;
+    align-items: center;
+    padding-top: 60px;
+    
+  }
+  .userFirstName, .userLastName, .userEmail, .pass{
+    position: relative;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 20px;
+  }
+  label {
+    position: absolute;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-weight: 600;
+    transition-duration: .6s;
+    transition-property: top,padding,left,display,font-size,background-color,color;
+  }
+  
+  .userFirstName:focus-within > label,
+  .userEmail:focus-within > label,
+  .pass:focus-within > label,
+  .userLastName:focus-within > label {
+    color: rgb(177, 177, 177);
+      top: -20px;
+      left: 10px;
+      background-color: white;
+      padding: 3px;
+      font-size: 12px;
+      
+  }
+  .valueapply {
+    color: rgb(177, 177, 177);
+    top: -20px;
+    left: 10px;
+    background-color: white;
+    padding: 3px;
+    font-size: 12px;
+  }
+  input {
+      border: solid 1px;
+      border-radius: 10px;
+      height: 50px;
+      padding-left: 10px !important;
+    }
+    button {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      color: #7439db;
+    }
+    
+    .link-btn {
+      background: none;
+      text-decoration: underline;
+    }
