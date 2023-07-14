@@ -2,18 +2,34 @@
 import { useState } from "react";
 import './Login.scss'
 import { Link } from 'react-router-dom'
+import Axios from 'axios'
 
 function Login() {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(firstName);
+        await fetch('http://localhost:3001/login/go', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              userEmail: email,
+              userPass: pass,
+            }),
+          })
+        //   console.log(email);
+      //   Axios.post('http://localhost:3000/login', {
+      //     userEmail: email,
+      //     userPass: pass,
+      // }).then(res => {
+      //   alert(res);
+      // })
     }
-
+    
+    
 return(
 <>
 <section className="login">

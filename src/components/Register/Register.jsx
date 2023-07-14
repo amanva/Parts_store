@@ -13,6 +13,7 @@ function Register() {
     //     e.preventDefault();
     //     console.log(firstName);
     // }
+   
 
 return(
 <>
