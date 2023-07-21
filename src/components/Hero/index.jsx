@@ -86,8 +86,9 @@ function Hero(){
     <div>
         <Company slides={galleryImages}/>
     </div>
-    </section>
     <Footer/>
+
+    </section>
     </>
     )
 }

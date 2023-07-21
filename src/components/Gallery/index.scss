@@ -2,7 +2,9 @@
   padding: 200px;
 .galleryWrap {
     display: grid;
-    grid-template-columns: repeat(3,minmax(0,1fr));
+    // grid-template-columns: repeat(3,minmax(0,1fr));
+    grid-template-columns:  repeat(3,minmax(0,1fr));
+    // min-width: 700px;
     gap:.0001px;
   }
 
@@ -13,7 +15,8 @@
     grid-template-rows: repeat(1, minmax(0,1fr));
     border: .5px solid gray;
     background-color: white;
-    
+    width: auto;
+    height: auto;
 
   }
   
@@ -21,12 +24,9 @@
     display: grid;
     justify-items: center;
     align-items: center;
-    width: 350px;
+    max-width: 350px;
+    width: auto;
     height: 200px;
-    img{
-      width: 350px;
-      height: 300px;
-    }
   }
 
 

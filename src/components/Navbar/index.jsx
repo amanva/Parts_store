@@ -25,6 +25,7 @@ function Navbar(){
     <li><Link to="/reviews">Reviews</Link></li>
     <li><Link to="/team">Team</Link></li>
     <li><Link to="/contact">Contact</Link></li>
+    <li><Link to ="/shop"> Shop</Link></li>
         </ul>    
   <div className="navbar-buttons">
   <Link to="/login" className= "bg-red-500 text-white rounded-md px-8 py-2 text-base font-medium hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-green-300" >
