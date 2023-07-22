@@ -1,6 +1,6 @@
 import Appli from "./components/Navbar";
 import Hero from "./components/Hero";
-import Contact from "./components/Contact";
+import Contact from "./components/Contact/Contact";
 import {Routes, Route} from "react-router-dom"
 import Reviews from "./components/Reviews/Reviews";
 import Footer from "./components/Footer/Footer";

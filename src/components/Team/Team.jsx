@@ -23,7 +23,7 @@ function Team(){
     return(
 <>
 <section className="team">
-<Begin names = "team"/>
+<Begin names = "Team"/>
 <div className="container">
 <div className="team-container">
     <div className="team-text">

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './index.scss'
+import './Contact.scss'
 import Footer from '../Footer/Footer';
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -61,17 +61,17 @@ const Contact = () => {
         </div>
       <div className="contact-container-main-form">
               <form>
-                <label>
+                <label className='contact-label'>
                   Full Name 
                 </label>
                 <input type="text" placeholder='Jane Doe'></input>
 
-                <label>
+                <label className='contact-label'>
                   Email 
                 </label>
                 <input type="email" placeholder="email@gmail.com"></input>
 
-                <label>
+                <label className='contact-label'>
                   Comment 
                 </label>
                 <textarea placeholder="Enter message"></textarea>
