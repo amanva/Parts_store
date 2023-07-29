@@ -13,8 +13,8 @@
   .image {
     justify-content: center;
     align-items: center;
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     min-height: 400px;
     max-height: 400px;
     padding: 0px;   
@@ -31,7 +31,7 @@
   .right-arrow {
     position: absolute;
     top: 50%;
-    right: 10%;
+    right: 2%;
     font-size: 3rem;
     color: #000;
     z-index: 10;
@@ -42,7 +42,7 @@
   .left-arrow {
     position: absolute;
     top: 50%;
-    left: 10%;
+    left: 2%;
     font-size: 3rem;
     color: #000;
     z-index: 10;
@@ -57,9 +57,9 @@
   
   .slide.active {
     display: grid;
-    grid-template-columns: 50%50%;
+    grid-template-columns: 25% 25% 25% 25%;
     // padding: 10px;
-    width: 700px;
+    width: 900px;
     height: 400px;
     opacity: 1;
     transition-duration: 1s;

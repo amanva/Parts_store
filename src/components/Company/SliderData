@@ -2,17 +2,15 @@ export const SliderData = [
   {
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/2048px-BMW.svg.png',
-    image2: 'https://www.freeiconspng.com/thumbs/mercedes-benz-logo-png/mercedes-benz-logo-png-6.png'
+    image2: 'https://www.freeiconspng.com/thumbs/mercedes-benz-logo-png/mercedes-benz-logo-png-6.png',
+    image3:'https://upload.wikimedia.org/wikipedia/en/thumb/d/df/Lamborghini_Logo.svg/1200px-Lamborghini_Logo.svg.png',
+      image4:'https://1000logos.net/wp-content/uploads/2019/12/Chevrolet-logo.png'
   },
+  
   {
-    image:
-      'https://upload.wikimedia.org/wikipedia/en/thumb/d/df/Lamborghini_Logo.svg/1200px-Lamborghini_Logo.svg.png',
-    image2:'https://1000logos.net/wp-content/uploads/2019/12/Chevrolet-logo.png'
-  },
-  {
-    image:
-      'https://1000logos.net/wp-content/uploads/2018/02/Porsche-Logo.png',
-      image2:'https://1000logos.net/wp-content/uploads/2021/04/Ferrari-logo.png'
+    image: 'https://1000logos.net/wp-content/uploads/2019/12/Chevrolet-logo.png',
+    image2: 'https://1000logos.net/wp-content/uploads/2018/02/Porsche-Logo.png',
+    image3:'https://1000logos.net/wp-content/uploads/2021/04/Ferrari-logo.png'
   },
   {
     image:
