@@ -1,12 +1,12 @@
 .searchBar{
         padding-top: 150px;
         align-items: center;
-        
 }
 
 
 .searchInputs {
     display:grid;
+    width: 500px;
     grid-template-columns: 80% 20%;
 }
 
