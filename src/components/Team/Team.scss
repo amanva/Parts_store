@@ -51,6 +51,7 @@
     
   }
   .nameTag{
+    z-index: 3;
     margin: -35px 40px 0px 40px;
     background-color: #FFFFFF;
   }
@@ -86,7 +87,6 @@
   position: absolute;
   z-index: 2;
   top: 40%;
-  width: 100%;
   left: 30%;
   opacity: 0;
 visibility: hidden;
@@ -96,7 +96,7 @@ transition: all .4s ease;
 }
 
 .icons > a{
-  background-color: black;
+  background-color: rgb(179, 6, 6);
   display: inline-block;
 width: 50px;
 height: 50px;
@@ -112,7 +112,7 @@ text-align: center;
   // left: 0;
   height: 89%;
   width: 92%;
-  background-color: rgba(0,0,0,.7);
+  background-color: rgba(17, 16, 16, 0.7);
   -webkit-transition: all .4s ease;
   transition: all .4s ease;
   z-index: 1;
@@ -125,4 +125,35 @@ text-align: center;
   top: 3%;
  opacity:1;
  visibility:visible
+}
+
+
+.team-socials:hover i{
+  -webkit-animation-duration:.3s;
+  animation-duration:.3s;
+  -webkit-animation-name: horizontal-scroll;
+  animation-name: horizontal-scroll;
+}
+
+@keyframes horizontal-scroll {
+  0% {
+    -webkit-transform:translateX(0);
+    transform:translateX(0);
+    opacity:1
+  }
+  49% {
+    -webkit-transform:translateX(100%);
+    transform:translateX(100%);
+    opacity:0
+  }
+  50% {
+    -webkit-transform:translateX(-100%);
+    transform:translateX(-100%);
+    opacity:0
+  }
+  100% {
+    -webkit-transform:translateX(0);
+    transform:translateX(0);
+    opacity:1
+  }
 }
