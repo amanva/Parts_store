@@ -4,6 +4,7 @@ const app = express();
 const mysql = require('mysql');
 const cors = require('cors');
 
+
 app.use(express.json())
 
 app.use(cors());
@@ -28,6 +29,35 @@ app.post('/login/go', (req,res)=>{
         res.send(result); 
     })
 });
+app.locals.globalVariable = "";
+app.post('/Shop/searchWord', (req,res)=>{
+    const word = req.body.searchWord
+    const sqlInsert = "SELECT * FROM vehicle"
+    globalVariable =word
+    console.log("Confirmed");
+    db.query(sqlInsert, (err, result) => {
+        if(err) {
+            console.log(err)
+            } 
+        console.log(word);
+        res.send(result); 
+    })
+});
+
+app.get('/Shop/searchWord', (req,res)=>{
+    const word = globalVariable
+    const sqlInsert = "SELECT * FROM vehicle Where VehMake LIKE '%" + word + "%'"
+    console.log("Confirmed1");
+    db.query(sqlInsert, (err, result) => {
+        if(err) {
+            console.log(err)
+            } 
+        console.log(word);
+        // console.log(result);
+        res.send(result); 
+    })
+});
+
 
  
 // app.get('/login', function(req, res) {
