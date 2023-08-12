@@ -26,6 +26,7 @@ app.post('/login/go', (req,res)=>{
             } 
                 
         res.send(result); 
+        console.log(UserEmail);
     })
 });
 

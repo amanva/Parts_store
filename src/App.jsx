@@ -11,6 +11,7 @@ import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
 import Cart from "./components/Cart/Cart";
 import { useState } from "react";
+import { ShopContextProvider } from "./shop-context";
 function App() {
 
   const [isOpen, setIsopen] = useState(false);
@@ -21,6 +22,7 @@ function App() {
   return (
    
     <>
+    <ShopContextProvider>
     <Nav cartFunction={ToggleSidebar}/>
     <Routes>
         <Route index path = "/" element={<Hero></Hero>} />
@@ -33,7 +35,7 @@ function App() {
       </Routes>
       <Cart cartOpen={isOpen} toggleCart={ToggleSidebar}/>
       <Chat/>
-      
+      </ShopContextProvider>
     </>
     
     

@@ -4,6 +4,10 @@ import team2 from '../../assets/team2.jpg'
 import team3 from '../../assets/team3.jpg'
 import Begin from '../Begin/Begin';
 import Footer from '../Footer/Footer';
+import { ShopContextProvider } from "../../shop-context";
+import { Shop } from '../../shop';
+
+
 function Team(){
     const testimonials = [
         {
@@ -22,7 +26,7 @@ function Team(){
           position: 'General Manager'
         },
       ];
-
+      
     return(
 <>
 <section className="team">
@@ -36,15 +40,13 @@ function Team(){
 <div className="team-box">
 {testimonials.map((testimonial, index) => (
         <TeamBox key={index} name={testimonial.name} image = {testimonial.image} position = {testimonial.position}/>
-      
       ))}
-      
+    
 </div>
-    </div>
+  </div>
 </div>
 
-
-
+<Shop></Shop>
 </section>
 <Footer></Footer>
 </>
@@ -93,7 +95,4 @@ const TeamBox = ({ name, image, position}) => {
       </>
     );
   };
-  
-
-export default Team
-
+export default Team;
