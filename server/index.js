@@ -29,7 +29,7 @@ app.post('/login/go', (req,res)=>{
         res.send(result); 
     })
 });
-app.locals.globalVariable = "";
+let globalVariable = "";
 app.post('/Shop/searchWord', (req,res)=>{
     const word = req.body.searchWord
     const sqlInsert = "SELECT * FROM vehicle"
