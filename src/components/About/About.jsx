@@ -5,7 +5,6 @@ import Parts from '../../assets/parts.png';
 import Price from '../../assets/price.png';
 import Return from '../../assets/return.jpg';
 import Footer from '../Footer/Footer';
-// import fetch from 'node-fetch';
 import { Color } from 'three';
 function About(){
     const aboutContent = [
@@ -46,18 +45,6 @@ const [accessToken, setAccessToken] = useState("");
 // }, [])
 
 async function search(){
-    var auth = {
-        method: 'GET',
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": "Basic MTI3MzMxZDItMmZjZS00MzRhLTg4OTAtZDlhYWJmMjkxYjQ0",
-            "partner-token": "cdb0fed1bf7e4fe9bfe392f8eabd65a7"
-        },
-    }
-    
-    fetch('http://api.carmd.com/v3.0/image?year=2022&make=Toyota&model=Camry&engine=2.5L 4-cylinder', auth)
-    .then(result => result.json())
-    .then(data => console.log(data))
 
 
     // var artistPar = {

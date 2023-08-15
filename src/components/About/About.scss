@@ -27,7 +27,6 @@
   }
   
   .flip-card:hover .flip-card-inner {
-    
     transform: rotateY(-180deg);
   }
   
@@ -44,6 +43,7 @@
   background-size: cover;
   background-position: center;
   color: #fff;
+  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -53,6 +53,7 @@
     background-size: cover;
     background-position: center;
     color: #fff;
+    font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -82,8 +83,14 @@
   .flip-card:hover{
     .flip-card-content, .flip-card-content-back{
         
-        background-color: rgba(255,55,55, 0.75);
+        background-color: rgba(156, 7, 7, 0.75);
     } 
+  }
+  .flip-card:hover{
+    .flip-card-content{
+      transition: 0.3s;
+      visibility: hidden;
+    }
   }
 .aboutItems{
     display: flex;
