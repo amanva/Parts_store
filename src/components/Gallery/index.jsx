@@ -26,7 +26,7 @@ return (
               >
                 <div className= "nameForPart">
                 <p className="title">{slide.name}</p>
-                <p className="Text">{slide.text}</p>
+                {/* <p className="Text">{slide.text}</p> */}
                 
                 </div>
                 <div className ="image">

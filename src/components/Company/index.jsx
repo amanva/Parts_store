@@ -1,48 +1,60 @@
-import React, { useState } from 'react';
-import { SliderData } from './SliderData';
-import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
-import './index.scss'
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
+import Carousel from "react-elastic-carousel";
+import Item from "./Item";
+import "./index.scss";
 
-const ImageSlider = ({ slides }) => {
-  const [current, setCurrent] = useState(0);
-  const length = slides.length-1;
+const breakPoints = [
+  { width: 1, itemsToShow: 1 },
+  { width: 550, itemsToShow: 2, itemsToScroll: 2 },
+  { width: 768, itemsToShow: 3 },
+  { width: 1200, itemsToShow: 4 }
+];
 
-  const nextSlide = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1);
+function App() {
+  const [items, setItems] = useState([1,2]);
+
+  const addItem = () => {
+    const nextItem = Math.max(1, items.length + 1);
+    setItems([...items, nextItem]);
   };
 
-  const prevSlide = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1);
+  const removeItem = () => {
+    const endRange = Math.max(0, items.length - 1);
+    setItems(items.slice(0, endRange));
   };
-
-  if (!Array.isArray(slides) || slides.length <= 0) {
-    return null;
-  }
 
   return (
-    <section className='slider'>
-      <div className='display-text'>
-        <h1>Choose from one of our great clients for the awesome parts they provide</h1>
-      </div>
-      <FaArrowAltCircleLeft className='left-arrow' onClick={prevSlide} />
-      <FaArrowAltCircleRight className='right-arrow' onClick={nextSlide} />
-      {SliderData.map((slide, index) => {
-        return (
-          <div
-            className={index === current ? 'slide active' : 'slide'}
-            key={index}
-          >
-            {index === current && (
-              <img src={slide.image} alt='Car Company Image' className='image' />
-            )}
-            {index === current && (
-              <img src={slide.image2} alt='Car Company Image' className='image' />
-            )}
-          </div>
-        );
-      })}
-    </section>
-  );
-};
+    // <div className="App">
+    //   <div className="controls-wrapper">
+    //     <button onClick={removeItem}>Remove Item</button>
+    //     <button onClick={addItem}>Add Item</button>
+    //   </div>
+    //   <hr className="seperator" />
+    //   <div className="carousel-wrapper">
+        <Carousel itemsToShow={3}>
+            <item><img className ="images" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/2048px-BMW.svg.png"></img></item>
+            <item><img className ="images" src="https://www.freeiconspng.com/thumbs/mercedes-benz-logo-png/mercedes-benz-logo-png-6.png"></img></item>
+            <item><img className ="images" src="https://upload.wikimedia.org/wikipedia/en/thumb/d/df/Lamborghini_Logo.svg/1200px-Lamborghini_Logo.svg.png"></img></item>
+            
+            <item><img className ="images" src="https://1000logos.net/wp-content/uploads/2019/12/Chevrolet-logo.png"></img></item>
+            <item><img className ="images" src="https://1000logos.net/wp-content/uploads/2018/02/Porsche-Logo.png"></img></item>
+            <item><img className ="images" src="https://1000logos.net/wp-content/uploads/2021/04/Ferrari-logo.png"></img></item>
+            
+            <item><img className ="images" src="https://global.toyota/pages/global_toyota/mobility/toyota-brand/emblem_ogp_001.png"></img></item>
+            <item><img className ="images" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Volkswagen_logo_2019.svg/600px-Volkswagen_logo_2019.svg.png"></img></item>
+            <item><img className ="images" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Nissan_logo.png/640px-Nissan_logo.png"></img></item>
+            
+            <item><img className ="images" src="https://fontmeme.com/images/Acura-Logo.jpg"></img></item>
 
-export default ImageSlider;
+          
+          {/* {items.map((item) => (
+            <Item key={item}>{item}</Item>
+          ))} */}
+        </Carousel>
+    //   </div>
+    // </div>
+  );
+}
+ 
+export default App;

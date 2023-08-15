@@ -30,7 +30,7 @@ function Navbar({cartFunction}){
   <div className="navbar-buttons">
   <div className="menu-cart" onClick={cartFunction}>
     <span>
-    <span class="menu-cart-button" data-counter="0">{totalItems}</span>
+    <span class="menu-cart-button">{totalItems}</span>
     <i class="fa-solid fa-cart-shopping"></i>
     </span>
     </div>
