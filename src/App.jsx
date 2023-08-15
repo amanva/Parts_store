@@ -12,6 +12,7 @@ import Login from "./components/Login/Login";
 import Cart from "./components/Cart/Cart";
 import { useState } from "react";
 import { ShopContextProvider } from "./shop-context";
+import Shop from "./components/Shop/Shop";
 function App() {
 
   const [isOpen, setIsopen] = useState(false);
@@ -32,6 +33,8 @@ function App() {
         <Route path = "contact" element={<Contact></Contact>} />
         <Route path = "login" element={<Login></Login>} />
         <Route path = "register" element={<Register></Register>} />
+        <Route path = "Shop" element={<Shop></Shop>} />
+
       </Routes>
       <Cart cartOpen={isOpen} toggleCart={ToggleSidebar}/>
       <Chat/>
