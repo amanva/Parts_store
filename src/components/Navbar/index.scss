@@ -24,10 +24,35 @@ h1{
 &-links{
     display: flex;
     gap: 2.5rem;
+    margin-left: 10rem;
 }
 &-buttons{
     display: flex;
     gap: 2.5rem;
+}
+.menu-cart{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    align-items: center;
+    cursor: pointer;
+    
+    &-button{
+        position: absolute;
+        min-width: 1.6em;
+        height: 1.6em;
+        top: -.1em;
+        inset-inline-end: 0em;
+        border-radius: 100%;
+        color: white;
+        background-color: #d9534f;
+        text-align: center;
+        font-size: 11px;
+        font-weight: 900;
+    }
 }
 }
 

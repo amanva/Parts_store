@@ -80,7 +80,7 @@ const Chat = () => {
     }
     const [isOpen, setIsOpen] = useState(false);
 
-    const handleToggle = () => {
+    const handleToggle = () => {6
       setIsOpen(!isOpen);
     };
     return (

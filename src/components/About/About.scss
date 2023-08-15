@@ -8,29 +8,6 @@
     padding-top: 30px;
     padding-bottom: 70px;
 }
-// .gridContainer{
-//     display: flex;
-//     justify-content: center;
-// }
-// .aboutGrid{
-//     display: grid;
-//     grid-template-rows: repeat(2,minmax(0,auto));
-//     grid-template-columns: repeat(2,minmax(0,500px));
-//     text-align: center;
-//     padding-bottom: 20px;
-//     border: 1px solid;
-// }
-// .products-desc{
-//     display: flex;
-//     flex-direction: column;
-//     gap: 20px;
-//     justify-content: center;
-// }
-// .products{
-//     img{
-//     border-radius: 10%;
-//     }
-// }
 .flip-card {
     perspective: 1000px;
     width: 500px;
@@ -110,6 +87,7 @@
   }
 .aboutItems{
     display: flex;
+    // flex-wrap: wrap;
 }
 
 .clients{

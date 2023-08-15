@@ -1,29 +1,36 @@
 import './Team.scss'
-import Person1 from '../../assets/person1.jpg'
-import Person2 from '../../assets/person2.jpg'
+import team1 from '../../assets/team1.jpg'
+import team2 from '../../assets/team2.jpg'
+import team3 from '../../assets/team3.jpg'
 import Begin from '../Begin/Begin';
 import Footer from '../Footer/Footer';
+import { ShopContextProvider } from "../../shop-context";
+import { Shop } from '../../shop';
+
+
 function Team(){
     const testimonials = [
         {
           name: 'Hillary Cline',
-          image: Person1,
-          review: '"Shopping at Gear Head Garage has been a game-changer for all my automotive needs. From the moment I stepped into the store, I was greeted by a knowledgeable and friendly staff whise and passion for auto parts were evident, making me feel confident in my purchase decisions."',
+          image: team1,
           position: 'General Manager'
         },
         {
           name: 'Jane Smith',
-          image: Person2,
-          review: '"One aspect that sets Gear Head Garage apart is their commitment to customer satisfaction. The staff went above and beyond to ensure I found exactly what I needed. They patiently answered all m"',
+          image: team2,
           position: 'Manager'
         },
-
+        {
+          name: 'Hillary Cline',
+          image: team3,
+          position: 'General Manager'
+        },
       ];
-
+      
     return(
 <>
 <section className="team">
-<Begin names = "team"/>
+<Begin names = "Team"/>
 <div className="container">
 <div className="team-container">
     <div className="team-text">
@@ -32,14 +39,14 @@ function Team(){
 </div>
 <div className="team-box">
 {testimonials.map((testimonial, index) => (
-        <TeamBox key={index} name={testimonial.name} image = {testimonial.image} review = {testimonial.review} position = {testimonial.position}/>
+        <TeamBox key={index} name={testimonial.name} image = {testimonial.image} position = {testimonial.position}/>
       ))}
+    
 </div>
-    </div>
+  </div>
 </div>
 
-
-
+<Shop></Shop>
 </section>
 <Footer></Footer>
 </>
@@ -47,30 +54,45 @@ function Team(){
 
     )
 }
-const TeamBox = ({ name, image, review, position}) => {
+
+const TeamBox = ({ name, image, position}) => {
     return (
+      <>
       <div className="team-innerBox">
         <div className="team-boxContent">
         <div className="imageBox">
         <img src={image} alt={name} className="testimonial-image" />
         </div>
+        <div className="hover-socials">
+        <ul className="team-socials">
+          <li className="icons">
+          <a href="https://facebook.com">
+          <i class="fa-brands fa-facebook text-white"></i>
+          </a>
+          </li>
+          
+          <li className="icons">
+          <a href="https://instagram.com">
+          <i class="fa-brands fa-square-instagram text-white"></i>
+          </a>
+          </li>
+          <li className="icons">
+          <a href="https://twitter.com">
+          <i class="fa-brands fa-twitter text-white"></i>
+          </a>
+          </li>
+        </ul>
+        </div>
+        </div>
+        <div className="nameTag">
         <div className="team-author">
           <span className="team-name">{name}</span>
           <span className="team-name">{position}</span>
         </div>
-        <div className="team-text">
-        <p className="team-content">{review}</p>
-        </div>
-        <div className="team-socials">
-          <i class="fa-brands fa-facebook"></i>
-          <i class="fa-brands fa-square-instagram"></i>
-          <i class="fa-brands fa-twitter"></i>
-        </div>
         </div>
       </div>
+      
+      </>
     );
   };
-  
-
-export default Team
-
+export default Team;

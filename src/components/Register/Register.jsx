@@ -24,19 +24,19 @@ return(
             <h2 className="mb-7 font-semibold">Create an account</h2>
         <form className="register-form">
             <div className="userFirstName">
-            <label className={firstName ? 'valueapply' : ''} for="userFirstName">First Name</label>
+            <label className={firstName ? 'valueapply' : 'reg-label'} for="userFirstName">First Name</label>
             <input value={firstName} name="userFirstName" onChange={(e) => setFirstName(e.target.value)} id="userFirstName" placeholder=" " />
             </div>
             <div className="userLastName">
-            <label className={lastName ? 'valueapply' : ''} for="userLastName">Last Name</label>
+            <label className={lastName ? 'valueapply' : 'reg-label'} for="userLastName">Last Name</label>
             <input value={lastName} name="userLastName" onChange={(e) => setLastName(e.target.value)} id="userLastName" placeholder=" " />
             </div>
             <div className="userEmail">
-            <label className={email ? 'valueapply' : ''} htmlFor="email">Email</label>
+            <label className={email ? 'valueapply' : 'reg-label'} htmlFor="email">Email</label>
             <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder=" " id="email" name="email" />
             </div>
             <div className="pass">
-            <label className={pass ? 'valueapply' : ''} htmlFor="password">Password</label>
+            <label className={pass ? 'valueapply' : 'reg-label'} htmlFor="password">Password</label>
             <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder=" " id="password" name="password" />
             </div>
             <button type="submit" class="bg-gradient-to-r from-red-500 to-red-700 hover:from-red-700 hover:to-red-900 text-white font-bold py-2 px-4 rounded-full mb-3">Register</button>
