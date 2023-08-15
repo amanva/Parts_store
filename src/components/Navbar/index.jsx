@@ -1,13 +1,12 @@
 import './index.scss'
 import Logo from '../../assets/ghg.png'
 import { Link } from "react-router-dom"
-import { useState, React} from "react";
-import Popup from 'reactjs-popup';
-// import 'reactjs-popup/dist/index.css';
-
+import { useState, React, useContext} from "react";
+import { ShopContext } from "../../shop-context";
 
 function Navbar({cartFunction}){
 
+  const { totalItems } = useContext(ShopContext);
     return (
     <>
    
@@ -31,7 +30,7 @@ function Navbar({cartFunction}){
   <div className="navbar-buttons">
   <div className="menu-cart" onClick={cartFunction}>
     <span>
-    <span class="menu-cart-button" data-counter="0">0</span>
+    <span class="menu-cart-button" data-counter="0">{totalItems}</span>
     <i class="fa-solid fa-cart-shopping"></i>
     </span>
     </div>

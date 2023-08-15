@@ -1,9 +1,10 @@
 import './Cart.scss'
-import { useState, React} from "react";
+import { useState, React, useContext} from "react";
 import { List } from '../../cart';
 import { ShopContextProvider } from "../../shop-context";
 
 function Cart({cartOpen, toggleCart}){
+
 
 return(
 
