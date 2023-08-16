@@ -11,19 +11,19 @@ import { Shop } from '../../shop';
 function Team(){
     const testimonials = [
         {
-          name: 'Hillary Cline',
+          name: 'Jacob Lowe',
           image: team1,
           position: 'General Manager'
         },
         {
-          name: 'Jane Smith',
+          name: 'Tom Smith',
           image: team2,
-          position: 'Manager'
+          position: 'Employee'
         },
         {
-          name: 'Hillary Cline',
+          name: 'Bill Cline',
           image: team3,
-          position: 'General Manager'
+          position: 'Owner'
         },
       ];
       
