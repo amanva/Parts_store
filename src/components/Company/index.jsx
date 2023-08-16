@@ -38,10 +38,10 @@ function App() {
             <item><img className ="images" src="https://upload.wikimedia.org/wikipedia/en/thumb/d/df/Lamborghini_Logo.svg/1200px-Lamborghini_Logo.svg.png"></img></item>
             
             <item><img className ="images" src="https://1000logos.net/wp-content/uploads/2019/12/Chevrolet-logo.png"></img></item>
-            <item><img className ="images" src="https://1000logos.net/wp-content/uploads/2018/02/Porsche-Logo.png"></img></item>
-            <item><img className ="images" src="https://1000logos.net/wp-content/uploads/2021/04/Ferrari-logo.png"></img></item>
+            <item><img className ="images w-full" src="https://1000logos.net/wp-content/uploads/2018/02/Porsche-Logo.png"></img></item>
+            <item><img className ="images w-full" src="https://1000logos.net/wp-content/uploads/2021/04/Ferrari-logo.png"></img></item>
             
-            <item><img className ="images" src="https://global.toyota/pages/global_toyota/mobility/toyota-brand/emblem_ogp_001.png"></img></item>
+            <item><img className ="images w-full h-full" src="https://global.toyota/pages/global_toyota/mobility/toyota-brand/emblem_ogp_001.png"></img></item>
             <item><img className ="images" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Volkswagen_logo_2019.svg/600px-Volkswagen_logo_2019.svg.png"></img></item>
             <item><img className ="images" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Nissan_logo.png/640px-Nissan_logo.png"></img></item>
             
