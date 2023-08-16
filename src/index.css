@@ -5,6 +5,9 @@
 
 
 * {
+  --main-color: red;
+  --font-family-one:"Nunito Sans";
+  --font-weight:600;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -14,6 +17,7 @@
     height: 200px; /* Set a fixed height for the component */
     overflow-y: auto;
     scroll-behavior: smooth;
+    background-color: #f2f2f2;
   }
   .container {
     max-width: 105rem;

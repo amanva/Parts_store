@@ -84,7 +84,8 @@ async function search(){
     <div className="clients-box-content">
     <div className="firstBox">
         <div className="firstBox-innerContent">
-            <h2>Our Clients</h2>
+            <span>Our Clients</span>
+            <h1>Statistics</h1>
             <p>Take a look at the clients we work with the most.</p>
     </div>
     </div>
@@ -140,9 +141,6 @@ async function search(){
     </div>
     </div>
 </div>
-<button onClick={search}>
-    Search
-</button>
 </div>
 </div>
 

@@ -7,6 +7,13 @@
     text-align: center;
     padding-top: 30px;
     padding-bottom: 70px;
+    h1{
+      font-family: var(--font-family-one), sans-serif;
+      color: var(--main-color);
+    
+    }
+     
+
 }
 .flip-card {
     perspective: 1000px;
@@ -102,7 +109,7 @@
     height: 500px;
 }
 .clients-box{
-  background-color: gray;
+  background-color: rgb(255, 255, 255);
     height: 330px;
     padding-left: 100px;
     padding-top: 70px;
@@ -119,8 +126,22 @@
     &-innerContent{
         display: flex;
         flex-direction: column;
-        gap: 50px;
-    
+        gap: 30px;
+      span{
+        width: 90px;
+        font-size: 0.8em;
+        font-weight: 600;
+        padding: 10px;
+        border-radius: 50px;
+        color: white;
+        background-color: red;
+      }
+      h1{
+        font-size: 2rem;
+        font-family: 'Jost';
+        font-weight: 700;
+
+      }
     }
 }
 .secondBox{
@@ -138,6 +159,7 @@
         width: 500px;
         display: flex;
         justify-content: space-between; 
+        font-weight: 600;
       }
       .progressline{
         height: 8px;
