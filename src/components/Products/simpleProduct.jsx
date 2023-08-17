@@ -7,9 +7,10 @@ export const simpleProduct =(props) =>{
         <div className="product">
             <img src={image}/>
             <div className="description">
-                
-                <p> <b>{productName}</b></p>
-                <p>${price}</p>
+                <div className="bot"> 
+                    <p> <b>{productName}</b></p>
+                    <p>${price}</p>
+                </div>
             </div>
         </div>
     )
