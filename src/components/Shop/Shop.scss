@@ -1,7 +1,8 @@
 .searchBar{
     display: grid;
     width: 100%;
-    place-items: center
+    place-items: end;
+    grid-template-columns: 1fr 1fr;
 }
 
 
@@ -9,7 +10,5 @@
     display: grid;
     padding-top: 100px;
     place-items: center;
-    // background-repeat: no-repeat;
-    // background-size: 100% 100%;
-    // background-image: url("C:/Users/pandh/GitHub/Parts_store/src/assets/shopImage.jpg");
+    font-size: 40px;
 }

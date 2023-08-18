@@ -26,10 +26,10 @@ function App() {
 
   return (
     <div className="App">
-      <div className="controls-wrapper">
+      {/* <div className="controls-wrapper">
         <button onClick={removeItem}>Remove Item</button>
         <button onClick={addItem}>Add Item</button>
-      </div>
+      </div> */}
       <hr className="seperator" />
       <div className="carousel-wrapper">
         <Carousel itemsToShow={3}>
