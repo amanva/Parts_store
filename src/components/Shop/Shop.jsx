@@ -19,7 +19,9 @@ const Shop = () => {
             <SearchBar></SearchBar>
 
         </div>
-        <div className='products'>{products.map((product) => <Product data = {product}></Product> )}</div>
+        <div className='products'>
+            {products.map((product) => <Product data = {product}></Product> )}
+        </div>
         </div> 
     </>
 
