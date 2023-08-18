@@ -6,8 +6,16 @@ import products from "../Products/products";
 import Product from "../Products/simpleProduct";
 import Begin from '../Begin/Begin';
 import {Select, MenuItem, FormControl, InputLabel} from "@mui/material";
+import { useState, useEffect } from 'react';
+
 // const[searchInput, seSearchInput] = useState("");
 const Shop = () => {
+    const [books, setBooks] = useState([]);
+    const handleDataFromChild = (data) => {
+        console.log("Parent Child connection established");
+        setBooks(data);
+        console.log(data);
+      };
     return <>
     <Begin names = "Shop"/>
     
@@ -17,14 +25,13 @@ const Shop = () => {
             <h1>Shop Grid</h1>
         </div>
         <div className="searchBar">
-            <SearchBar></SearchBar>
+            <SearchBar onDataFromChild = {handleDataFromChild}></SearchBar>
             <FormControl>
 
             <InputLabel>Filter</InputLabel>
 
             <Select 
                 sx={{
-            // marginTop:1,        
                 width: 250,
                 height: 50,
                 }}
@@ -37,7 +44,7 @@ const Shop = () => {
             </FormControl>
 
         </div>
-        <div className='products'>{products.map((product) => <Product data = {product}></Product> )}</div>
+        <div className='products'>{books.map((book) => <Product data = {book}></Product> )}</div>
         </div> 
     </>
 

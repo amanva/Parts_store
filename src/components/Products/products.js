@@ -1,7 +1,3 @@
-
-
-
-
 const products = [
     {
         id: 1,
@@ -52,4 +48,5 @@ const products = [
         image: "https://dcadprod.azureedge.net/b2c-experience-production/attachments/ckkmtvfzp05qg01lmvu34lj89-4w-181-3528706008092-tire-michelin-defender-ltx-m-slash-s-275-slash-55-r20-113t-nl-a-main-1-30.png"
     },
 ];
+
 export default products;
