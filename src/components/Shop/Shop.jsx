@@ -14,7 +14,7 @@ const Shop = () => {
     const handleDataFromChild = (data) => {
         console.log("Parent Child connection established");
         setBooks(data);
-        console.log(data);
+        // console.log(data);
       };
     return <>
     <Begin names = "Shop"/>
