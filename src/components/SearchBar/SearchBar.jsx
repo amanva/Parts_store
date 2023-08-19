@@ -1,20 +1,21 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, createContext} from 'react';
 import React from 'react'
 import "./SearchBar.scss"
 import SearchIcon from '@mui/icons-material/Search';
 import axios from "axios";
 
+export const SearchBarContext = createContext();
 
-
-function SearchBar () {
+function SearchBar ({onDataFromChild, fx} ) {
     const [books, setBooks] = useState([]);
+    const [isLoading, setLoading] = useState(false);
 
     const[searchInput, setSearchInput] = useState('');
     const searchItems = (searchValue) => {
         setSearchInput(searchValue)
         console.log(searchValue)
     }
-    const handleSubmit = async (e) => {
+     const handleSubmit = async (e) => {
         console.log("Working")
         e.preventDefault();
         await fetch('http://localhost:3001/Shop/searchWord', {
@@ -25,32 +26,53 @@ function SearchBar () {
             body: JSON.stringify({
               searchWord: searchInput,
             }),
-          })
-    }
-    useEffect(() => {
+          }),
+          fetchAllBooks();
+
+    };
+    
         const fetchAllBooks = async () => {
           try {
             console.log("Getting sql query");
-            const res = await axios.get("http://localhost:3001/Shop/searchWord");
-            console.log(res);
-            setBooks(res.data);
+            await axios.get("http://localhost:3001/Shop/searchWord").then(response => {
+              setBooks(response.data);
+
+              setLoading(true);
+            })
+            // console.log(res.data);
+            // setBooks(res.data);
+
           } catch (err) {
             console.log(err);
           }
         };
-        fetchAllBooks();
-      }, []);
+        if (isLoading) {
+          console.log(books);
+          setLoading(false);
+          console.log("Sending data to parent");
+          onDataFromChild(books);
+        }
+       
     
 
     
+    function test(event){
+      console.log("Testing");
+      handleSubmit(event);
+      
+    } 
 
+    const contextValue = handleSubmit();
 
-    return <>
+    return(
+      <SearchBarContext.Provider value={contextValue}>
         <div className="searchBar">
             <div className="searchInputs">
                 <input className="searchInput" placeholder="Enter Search Input"
                 onChange={(e) => searchItems(e.target.value)} />
-                <button onClick={handleSubmit}><SearchIcon></SearchIcon></button>
+                <button onClick={(event) => {
+                  test(event);
+                }}><SearchIcon></SearchIcon></button>
 
               
             </div>
@@ -58,21 +80,10 @@ function SearchBar () {
                     
             </div>
         </div>
-    
-    </>
+        </SearchBarContext.Provider>
+    )
 }
 
 export default SearchBar;
 
-{/* <form action="/" method="get">
-            <label htmlFor="header-search">
-                <span className="visually-hidden">Search blog posts</span>
-            </label>
-            <input
-                type="text"
-                id="header-search"
-                placeholder="Search blog posts"
-                name="s" 
-            />
-            <button type="submit">Search</button>
-        </form> */}
+        

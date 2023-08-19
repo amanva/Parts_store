@@ -8,13 +8,15 @@ function Reviews(){
     const testimonials = [
         {
           name: 'Hillary Cline',
+          title: 'Store Owner',
           image: Person1,
           review: '"Shopping at Gear Head Garage has been a game-changer for all my automotive needs. From the moment I stepped into the store, I was greeted by a knowledgeable and friendly staff who were eager to assist me. Their expertise and passion for auto parts were evident, making me feel confident in my purchase decisions."'
         },
         {
           name: 'Jane Smith',
+          title: 'Director',
           image: Person2,
-          review: '"One aspect that sets Gear Head Garage apart is their commitment to customer satisfaction. The staff went above and beyond to ensure I found exactly what I needed. They patiently answered all my questions, provided valuable recommendations, and even offered helpful installation tips. Their dedication to exceptional service made the entire shopping experience smooth and enjoyable."'
+          review: '"One aspect that sets Gear Head Garage apart is their commitment to customer satisfaction. The staff went above and beyond to ensure I found exactly what I needed. They patiently answered all my questions, provided valuable recommendations, and even offered helpful installation tips."'
         },
 
       ];
@@ -31,7 +33,7 @@ function Reviews(){
 </div>
 <div className="reviews-box">
 {testimonials.map((testimonial, index) => (
-        <ReviewBox key={index} name={testimonial.name} image = {testimonial.image} review = {testimonial.review} />
+        <ReviewBox key={index} name={testimonial.name} title = {testimonial.title} image = {testimonial.image} review = {testimonial.review} />
       ))}
 </div>
     </div>
@@ -45,13 +47,16 @@ function Reviews(){
 
     )
 }
-const ReviewBox = ({ name, image, review }) => {
+const ReviewBox = ({ name, title, image, review }) => {
     return (
       <div className="reviews-innerBox">
         <p className="reviews-content">{review}</p>
         <div className="reviews-author">
         <img src={image} alt={name} className="testimonial-image" />
+        <div className="reviews-namesBox">
           <span className="reviews-name">{name}</span>
+          <span className="reviews-name text-red-600">{title}</span>
+          </div>
         </div>
       </div>
     );
