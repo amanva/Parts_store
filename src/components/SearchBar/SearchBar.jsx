@@ -6,18 +6,23 @@ import axios from "axios";
 
 export const SearchBarContext = createContext();
 
+
 function SearchBar ({onDataFromChild, fx} ) {
     const [books, setBooks] = useState([]);
     const [isLoading, setLoading] = useState(false);
+    const [load, setLoad] = useState(true);
 
     const[searchInput, setSearchInput] = useState('');
     const searchItems = (searchValue) => {
         setSearchInput(searchValue)
         console.log(searchValue)
     }
+   
+     
      const handleSubmit = async (e) => {
         console.log("Working")
-        e.preventDefault();
+        setLoad(false);
+        if (e && e.preventDefault) { e.preventDefault(); }
         await fetch('http://localhost:3001/Shop/searchWord', {
             method: 'POST',
             headers: {
@@ -30,6 +35,12 @@ function SearchBar ({onDataFromChild, fx} ) {
           fetchAllBooks();
 
     };
+    useEffect((e) => { 
+      if(load){
+        handleSubmit(e);
+
+      }
+    });
     
         const fetchAllBooks = async () => {
           try {
@@ -61,8 +72,6 @@ function SearchBar ({onDataFromChild, fx} ) {
       handleSubmit(event);
       
     } 
-
-    const contextValue = handleSubmit();
 
     return(
       <SearchBarContext.Provider value={contextValue}>

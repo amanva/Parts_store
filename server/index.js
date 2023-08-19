@@ -55,6 +55,7 @@ app.get('/Shop/searchWord', (req,res)=>{
             } 
         console.log(word);
         // console.log(result);
+        console.log(result);
         res.send(result); 
     })
 });

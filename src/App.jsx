@@ -24,6 +24,7 @@ function App() {
    
     <>
     <ShopContextProvider>
+    {/* <SearchBar> */}
     <Nav cartFunction={ToggleSidebar}/>
     <Routes>
         <Route index path = "/" element={<Hero></Hero>} />
@@ -33,11 +34,13 @@ function App() {
         <Route path = "contact" element={<Contact></Contact>} />
         <Route path = "login" element={<Login></Login>} />
         <Route path = "register" element={<Register></Register>} />
+        
         <Route path = "Shop" element={<Shop></Shop>} />
 
       </Routes>
       <Cart cartOpen={isOpen} toggleCart={ToggleSidebar}/>
       <Chat/>
+      {/* </SearchBar> */}
       </ShopContextProvider>
     </>
     
