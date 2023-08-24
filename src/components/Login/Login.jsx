@@ -2,7 +2,7 @@
 import { useState } from "react";
 import './Login.scss'
 import { Link } from 'react-router-dom'
-import Axios from 'axios'
+import axios from 'axios'
 
 function Login() {
     const [email, setEmail] = useState('');
@@ -10,7 +10,7 @@ function Login() {
 
 	const handleSubmit = async (e) => {
         e.preventDefault();
-        await fetch('http://localhost:3001/login/go', {
+        await fetch('http://localhost:3001/login', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -21,6 +21,19 @@ function Login() {
             }),
           })
     }
+
+    // const log = async (e) => {
+    //     e.preventDefault();
+    //     await axios({
+    //       method: "POST",
+    //       body: {
+    //         userEmail: email,
+    //         userPass: pass,
+    //       },
+    //       withCredentials: true,
+    //       url: "http://localhost:3001/login",
+    //     }).then((res) => console.log(res));
+    //   };
     
     
 return(

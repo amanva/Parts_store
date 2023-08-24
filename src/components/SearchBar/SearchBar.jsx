@@ -4,7 +4,6 @@ import "./SearchBar.scss"
 import SearchIcon from '@mui/icons-material/Search';
 import axios from "axios";
 
-export const SearchBarContext = createContext();
 
 
 function SearchBar ({onDataFromChild, fx} ) {
@@ -17,11 +16,15 @@ function SearchBar ({onDataFromChild, fx} ) {
         setSearchInput(searchValue)
         console.log(searchValue)
     }
-   
+   useEffect(() => { 
+      
+    console.log("UseEffect");
+    handleSubmit();
+  
+}, []);
      
      const handleSubmit = async (e) => {
         console.log("Working")
-        setLoad(false);
         if (e && e.preventDefault) { e.preventDefault(); }
         await fetch('http://localhost:3001/Shop/searchWord', {
             method: 'POST',
@@ -31,57 +34,42 @@ function SearchBar ({onDataFromChild, fx} ) {
             body: JSON.stringify({
               searchWord: searchInput,
             }),
-          }),
-          fetchAllBooks();
-
+          }).then(fetchAllBooks())
     };
-    useEffect((e) => { 
-      if(load){
-        handleSubmit(e);
-
-      }
-    });
+    
+   
     
         const fetchAllBooks = async () => {
           try {
             console.log("Getting sql query");
             await axios.get("http://localhost:3001/Shop/searchWord").then(response => {
               setBooks(response.data);
-
               setLoading(true);
             })
-            // console.log(res.data);
-            // setBooks(res.data);
+         
 
           } catch (err) {
             console.log(err);
           }
         };
         if (isLoading) {
-          console.log(books);
-          setLoading(false);
           console.log("Sending data to parent");
           onDataFromChild(books);
+          setLoading(false);
+
         }
        
     
 
     
-    function test(event){
-      console.log("Testing");
-      handleSubmit(event);
-      
-    } 
 
-    return(
-      <SearchBarContext.Provider value={contextValue}>
+    return <>
         <div className="searchBar">
             <div className="searchInputs">
                 <input className="searchInput" placeholder="Enter Search Input"
                 onChange={(e) => searchItems(e.target.value)} />
-                <button onClick={(event) => {
-                  test(event);
-                }}><SearchIcon></SearchIcon></button>
+                <button onClick={handleSubmit}>
+                <SearchIcon></SearchIcon></button>
 
               
             </div>
@@ -89,10 +77,21 @@ function SearchBar ({onDataFromChild, fx} ) {
                     
             </div>
         </div>
-        </SearchBarContext.Provider>
-    )
+    
+    </>
 }
 
 export default SearchBar;
 
-        
+{/* <form action="/" method="get">
+            <label htmlFor="header-search">
+                <span className="visually-hidden">Search blog posts</span>
+            </label>
+            <input
+                type="text"
+                id="header-search"
+                placeholder="Search blog posts"
+                name="s" 
+            />
+            <button type="submit">Search</button>
+        </form> */}

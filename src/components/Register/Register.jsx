@@ -1,9 +1,12 @@
 
 import { useState } from "react";
 import './Register.scss'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import axios from "axios"
+
 
 function Register() {
+    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [firstName, setFirstName] = useState('');
@@ -13,7 +16,37 @@ function Register() {
     //     e.preventDefault();
     //     console.log(firstName);
     // }
-   
+
+    const reg = async (e) => {
+        e.preventDefault();
+        try {
+        await fetch('http://localhost:3001/register', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              userEmail: email,
+              userPass: pass,
+            }),
+          })
+          navigate('/Login');
+        } catch(error){
+            console.log(error);
+        }
+      };
+    //   const sendTOLogin = async () => {
+    //     try {
+    //       await axios.get("http://localhost:3001/register").then(response => {
+    //         setBooks(response.data);
+    //         setLoading(true);
+    //       })
+       
+
+    //     } catch (err) {
+    //       console.log(err);
+    //     }
+    //   };
 
 return(
 <>
@@ -22,7 +55,7 @@ return(
 <div className="auth-form-container">
     <div className="register-box">
             <h2 className="mb-7 font-semibold">Create an account</h2>
-        <form className="register-form">
+        <form className="register-form" onSubmit={reg}>
             <div className="userFirstName">
             <label className={firstName ? 'valueapply' : 'reg-label'} for="userFirstName">First Name</label>
             <input value={firstName} name="userFirstName" onChange={(e) => setFirstName(e.target.value)} id="userFirstName" placeholder=" " />

@@ -4,7 +4,35 @@ import './Footer.scss'
 function Footer(){
 
     return (
-    <footer className="footer">
+    
+    <footer className="footerContainer">
+        <div className="container">
+        <div className="information-container">
+    <div className="information">
+        <div className="text-information">
+        <div className="text-header">
+            <h2>Join For Daily Updates</h2>
+        </div>
+        <div className="text-desc">
+            <p>Join to get the latest deals and updates to our store</p>
+        </div>
+        <div className="input-box">
+            <div className="email-input">
+            <input type="email" name="email" placeholder="Enter Your Email Address" required="">
+            </input>
+            
+            </div>
+            <div className="email-submit">
+            <button type="submit" className="sub-button">
+                Sign Up
+            </button>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div className="footer">
     <div className="container">
     <div className="footer-items">
     <ul className="footer-links">
@@ -37,7 +65,7 @@ function Footer(){
     </div>
         
     </div>
-
+    </div>
 
     </footer>
 

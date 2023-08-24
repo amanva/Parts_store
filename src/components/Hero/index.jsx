@@ -77,7 +77,6 @@ function Hero(){
     <h1>rev up your ride with quality parts</h1>
     </div>
     </div>
-   
     </div>
    
     <div className="wspGallery">
