@@ -1,3 +1,4 @@
+
 .searchBar{
     display: grid;
     width: 100%;
@@ -8,9 +9,43 @@
 .products{
     margin-top: 10px;
 }
+.divForImage{
+    
+}
 .shopImage{
+    width: 1100px;
+    height: 300px;
+    // height: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    background-image: url("https://img.freepik.com/premium-photo/red-generic-sport-unbranded-car-isolated-grey-background-3d-illustration_110488-1981.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    // background-size: cover;
     display: grid;
-    padding-top: 100px;
+    margin-top: 50px;
+    // padding-top: 300px;
     place-items: center;
     font-size: 40px;
+    margin: 50px auto;
+
+
+}
+.shopTitle{
+    position: relative;
+    // background-color: black;
+    color: black;
+    text-align: center;
+    h1{
+        font-size: 25px;
+    }
+    h2{
+        color: red;
+
+        font-size: 25px;
+        font-weight: 900;
+        letter-spacing: 5px;
+    }
+    
 }

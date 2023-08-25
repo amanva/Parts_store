@@ -16,49 +16,61 @@ function SearchBar ({onDataFromChild, fx} ) {
         setSearchInput(searchValue)
         console.log(searchValue)
     }
+
+    const handleSubmit = async (e) => {
+      console.log("Working")
+      if (e && e.preventDefault) { e.preventDefault(); }
+      try{
+      await fetch('http://localhost:3001/Shop/searchWord', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            searchWord: searchInput,
+          }),
+        })
+      fetchAllBooks()}
+        catch(error){
+          console.log("ERRRORO");
+        }
+  };
+
+  const fetchAllBooks = async () => {
+    try {
+      console.log("Getting sql query");
+      await axios.get("http://localhost:3001/Shop/searchWord").then(response => {
+        console.log(response.data);
+        setBooks(response.data);
+        console.log(books);
+        setLoading(true);
+      })
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  if (isLoading) {
+    console.log("Sending data to parent");
+    onDataFromChild(books);
+    setLoading(false);
+
+  }
+ 
    useEffect(() => { 
       
     console.log("UseEffect");
     handleSubmit();
   
 }, []);
+useEffect(() => {
+  console.log("books updated", books);
+},[books]);
      
-     const handleSubmit = async (e) => {
-        console.log("Working")
-        if (e && e.preventDefault) { e.preventDefault(); }
-        await fetch('http://localhost:3001/Shop/searchWord', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              searchWord: searchInput,
-            }),
-          }).then(fetchAllBooks())
-    };
+     
     
    
     
-        const fetchAllBooks = async () => {
-          try {
-            console.log("Getting sql query");
-            await axios.get("http://localhost:3001/Shop/searchWord").then(response => {
-              setBooks(response.data);
-              setLoading(true);
-            })
-         
-
-          } catch (err) {
-            console.log(err);
-          }
-        };
-        if (isLoading) {
-          console.log("Sending data to parent");
-          onDataFromChild(books);
-          setLoading(false);
-
-        }
-       
+        
     
 
     
