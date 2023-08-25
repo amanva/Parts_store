@@ -3,7 +3,14 @@ const app = express();
 const mysql = require('mysql');
 const cors = require('cors');
 const passport = require("passport");
-const passportLocal = require("passport-local").Strategy;
+// const initializePassport = require('./passport-config');
+// initializePassport(
+//     passport,
+//     email => getEmail(email),
+//     id => getId(id),
+//     pass => getPassword(pass)
+//   )
+
 
 app.use(express.json())
 
@@ -17,6 +24,41 @@ const db = mysql.createPool({
     
 })
 
+const getEmail = (email) =>{
+    const sqlInsert = `SELECT User_Email FROM users WHERE User_Email = ?`;
+    let emailVal = "";
+    db.query(sqlInsert, [email], (err, result) => {
+        if(err) {
+            console.log(err);
+            } 
+            emailVal = result.UserEmail;
+            console.log(emailVal);
+    })
+
+    return emailVal;
+
+}
+
+const getPassword = (email) =>{
+    const sqlInsert = `SELECT User_Password FROM users WHERE User_Email = ${email}`;
+    db.query(sqlInsert, (err, result) => {
+        if(err) {
+            console.log(err);
+            } 
+            console.log(result);
+    })  
+}
+
+const getId = (id) =>{
+    const sqlInsert = `SELECT ID FROM users WHERE ID = ${id}`;
+    db.query(sqlInsert, (err, result) => {
+        if(err) {
+            console.log(err);
+            } 
+            console.log("got ID");
+    })  
+}
+
 app.post('/register', (req,res)=>{
     try{
     const UserEmail = req.body.userEmail
@@ -26,9 +68,11 @@ app.post('/register', (req,res)=>{
         if(err) {
             console.log(err);
             } 
-            console.log("f9o");
+            
         res.redirect('http://localhost:3000/login');
-    })  
+    })
+    console.log(getEmail(UserEmail));
+    
 } catch {
     console.log("asd");
     res.redirect('/register');

@@ -12,11 +12,6 @@ function Register() {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
 
-	// const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     console.log(firstName);
-    // }
-
     const reg = async (e) => {
         e.preventDefault();
         try {
