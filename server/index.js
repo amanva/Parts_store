@@ -33,7 +33,7 @@ app.post('/login/go', (req,res)=>{
 let globalVariable = "";
 app.post('/Shop/searchWord', (req,res)=>{
     const word = req.body.searchWord
-    const sqlInsert = "SELECT * FROM rims WHERE Part_Name LIKE '%" + word + "%' UNION SELECT * FROM spoilers WHERE Part_Name LIKE '%" + word + "%'"; 
+    const sqlInsert = "SELECT * FROM rims WHERE Part_Name LIKE '%" + word + "%' UNION SELECT * FROM spoilers WHERE Part_Name LIKE '%" + word + "%' UNION SELECT * FROM intake WHERE Part_Name LIKE '%" + word + "%' UNION SELECT * FROM tail_lights WHERE Part_Name LIKE '%" + word + "%' UNION SELECT * FROM wheels WHERE Part_Name LIKE '%" + word + "%' UNION SELECT * FROM exhaust WHERE Part_Name LIKE '%" + word + "%';"; 
 
     globalVariable =word
     console.log("Confirmed");
@@ -48,7 +48,7 @@ app.post('/Shop/searchWord', (req,res)=>{
 
 app.get('/Shop/searchWord', (req,res)=>{
     const word = globalVariable;
-    const sqlInsert = "SELECT * FROM rims WHERE Part_Name LIKE '%" + word + "%' UNION SELECT * FROM spoilers WHERE Part_Name LIKE '%" + word + "%'"; 
+    const sqlInsert = "SELECT * FROM rims WHERE Part_Name LIKE '%" + word + "%' UNION SELECT * FROM spoilers WHERE Part_Name LIKE '%" + word + "%' UNION SELECT * FROM intake WHERE Part_Name LIKE '%" + word + "%' UNION SELECT * FROM tail_lights WHERE Part_Name LIKE '%" + word + "%' UNION SELECT * FROM wheels WHERE Part_Name LIKE '%" + word + "%' UNION SELECT * FROM exhaust WHERE Part_Name LIKE '%" + word + "%';"; 
 
     console.log("Confirmed1");
     db.query(sqlInsert, (err, result) => {

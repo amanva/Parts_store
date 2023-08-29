@@ -9,42 +9,32 @@
 .products{
     margin-top: 10px;
 }
-.divForImage{
-    
-}
-.shopImage{
-    width: 1100px;
-    height: 300px;
-    // height: 15rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    background-image: url("https://img.freepik.com/premium-photo/red-generic-sport-unbranded-car-isolated-grey-background-3d-illustration_110488-1981.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    // background-size: cover;
-    display: grid;
-    margin-top: 50px;
-    // padding-top: 300px;
-    place-items: center;
-    font-size: 40px;
-    margin: 50px auto;
 
 
-}
+
 .shopTitle{
-    position: relative;
-    // background-color: black;
-    color: black;
-    text-align: center;
+    display: flex;
+    background-color: 888;
+    justify-content:center;
+    padding: 400px 100px;
+    // padding-right: 1000px;
+    
+    background-repeat: no-repeat;
+    background-size:100%;
+    background-position: center;
+    background-image: url("https://cdn.wallpapersafari.com/97/92/VDshqx.jpg");
     h1{
-        font-size: 25px;
+        font-size: 35px;
+        color: black;
+        background-color: 888 ;
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 40PX;
+
     }
     h2{
-        color: red;
 
         font-size: 25px;
-        font-weight: 900;
         letter-spacing: 5px;
     }
     

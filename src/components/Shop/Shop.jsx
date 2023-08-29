@@ -20,12 +20,10 @@ const Shop = () => {
     <Begin names = "Shop"/>
     
     <div className="container">
-            {/* <div className='shopImage'>
                 <div className='shopTitle'>
-                    <h1>Shop Our</h1>
-                    <h2>Unlimited Spoilers</h2>
+                    <h1>Shop Now</h1>
+                    {/* <h2> Browse our shop for hundreds of different automotive parts</h2> */}
                 </div>
-            </div> */}
         <div className="searchBar">
             <SearchBar onDataFromChild = {handleDataFromChild}></SearchBar>
             <FormControl>
