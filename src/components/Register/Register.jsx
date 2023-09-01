@@ -21,8 +21,8 @@ function Register() {
               'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-              userEmail: email,
-              userPass: pass,
+              email: email,
+              password: pass,
             }),
           })
           navigate('/Login');
