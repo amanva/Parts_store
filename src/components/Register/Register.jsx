@@ -12,10 +12,11 @@ function Register() {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
 
+    const [userExists, setUserExists] = useState("");
+
     const reg = async (e) => {
         e.preventDefault();
-        try {
-        await fetch('http://localhost:3001/register', {
+          await fetch('http://localhost:3001/register', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -25,23 +26,20 @@ function Register() {
               password: pass,
             }),
           })
-          navigate('/Login');
-        } catch(error){
-            console.log(error);
+
+          getUser();
+          
+      }
+      const getUser = async () => {
+        try {
+          await axios.get("http://localhost:3001/register").then(response => {
+            setUserExists(response.data);
+            console.log(response.data);
+          })
+        } catch (err) {
+          console.log(err);
         }
       };
-    //   const sendTOLogin = async () => {
-    //     try {
-    //       await axios.get("http://localhost:3001/register").then(response => {
-    //         setBooks(response.data);
-    //         setLoading(true);
-    //       })
-       
-
-    //     } catch (err) {
-    //       console.log(err);
-    //     }
-    //   };
 
 return(
 <>
@@ -50,7 +48,8 @@ return(
 <div className="auth-form-container">
     <div className="register-box">
             <h2 className="mb-7 font-semibold">Create an account</h2>
-        <form className="register-form" onSubmit={reg}>
+        <form className="register-form" action = 'http://localhost:3001/register' onSubmit={reg}  method="POST">
+        {userExists == "" ? <></>: <h2 className="mb-7 font-semibold">{userExists}</h2>}
             <div className="userFirstName">
             <label className={firstName ? 'valueapply' : 'reg-label'} for="userFirstName">First Name</label>
             <input value={firstName} name="userFirstName" onChange={(e) => setFirstName(e.target.value)} id="userFirstName" placeholder=" " />

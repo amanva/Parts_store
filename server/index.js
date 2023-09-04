@@ -1,5 +1,5 @@
 const express = require('express');
-const mysql = require('mysql');
+const mysql = require('mysql2/promise');
 const cors = require('cors');
 const passport = require('passport');
 const initializePassport = require('./passport-config');
@@ -33,27 +33,50 @@ const db = mysql.createPool({
     database: 'aps'
     
 })
+
+var exists = "";
 app.post('/register',  async (req,res)=>{
-    try{
     const UserEmail = req.body.email
+    const [existingUser] = await db.execute("SELECT User_Email FROM users WHERE User_Email = ?", [UserEmail]);
+    if (existingUser.length > 0) {
+      exists = 'User with this email already exists';
+      res.send(exists);
+    }
+  else{
     const hashedPassword = await bcrypt.hash(req.body.password, 10)
     const sqlInsert = `INSERT INTO users (User_Email, User_Password) VALUES (?, ?)`;
-    db.query(sqlInsert, [UserEmail, hashedPassword], (err, result) => {
-        if(err) {
-            console.log(err);
-            }   
-        res.redirect('http://localhost:3000/login');
-    })
-} catch {
-    res.redirect('http://localhost:3000/register');
-}
+    exists = "";
+    db.execute(sqlInsert, [UserEmail, hashedPassword]);
+    res.send("wo0rks");
+  }
+
 
 });
+app.get("/register", (req, res, next) => {
+  res.send(exists);
+});
+
+// app.post('/register',  async (req,res)=>{
+//   try{
+//   const UserEmail = req.body.email
+//   const hashedPassword = await bcrypt.hash(req.body.password, 10)
+//   const sqlInsert = `INSERT INTO users (User_Email, User_Password) VALUES (?, ?)`;
+//   db.query(sqlInsert, [UserEmail, hashedPassword], (err, result) => {
+//       if(err) {
+//           console.log(err);
+//           }
+//   })
+// } catch {
+//   res.redirect('http://localhost:3000/register');
+// }
+
+// });
 
 
   var value;
   var incorrect = "";
   app.post("/login", (req, res, next) => {
+
     passport.authenticate("local", (err, user, info) => {
       if (err) throw err;
       if (!user) { 
@@ -71,6 +94,8 @@ app.post('/register',  async (req,res)=>{
       }
     })(req, res, next);
   });
+
+
 
   app.get("/login", (req, res, next) => {
       res.send({value, incorrect});
