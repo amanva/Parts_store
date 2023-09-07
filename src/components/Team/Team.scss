@@ -83,6 +83,13 @@
     opacity:1;
  visibility:visible
   }
+  .team-innerBox:hover{
+    .imageBox::before{
+      top: 3%;
+     opacity:1;
+     visibility:visible
+    }
+  } 
   // hovering for socials
 .hover-socials{
   position: absolute;
@@ -109,15 +116,13 @@ text-align: center;
 .imageBox::before{
   position: absolute;
   content: "";
-  // top: 100%;
-  // left: 0;
   height: 89%;
   width: 92%;
   background-color: rgba(17, 16, 16, 0.7);
   -webkit-transition: all .4s ease;
   transition: all .4s ease;
   z-index: 1;
-  // -webkit-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   opacity: 0;
   visibility: hidden;
@@ -128,8 +133,11 @@ text-align: center;
  visibility:visible
 }
 
+a{
+  overflow: hidden;
+}
 
-.team-socials:hover i{
+a:hover i{
   -webkit-animation-duration:.3s;
   animation-duration:.3s;
   -webkit-animation-name: horizontal-scroll;
