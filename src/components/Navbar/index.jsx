@@ -25,7 +25,7 @@ function Navbar({cartFunction}){
     <li><Link to="/reviews">Reviews</Link></li>
     <li><Link to="/team">Team</Link></li>
     <li><Link to="/contact">Contact</Link></li>
-    <li><Link to ="/Shop"> Shop</Link></li>
+    <li><Link to ="/Shop/:type"> Shop</Link></li>
         </ul>    
         
   <div className="navbar-buttons">

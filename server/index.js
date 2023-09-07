@@ -40,7 +40,8 @@ app.post('/Shop/searchWord', (req,res)=>{
     db.query(sqlInsert, (err, result) => {
         if(err) {
             console.log(err)
-            }         console.log(result);
+            } 
+        console.log(result);
 
         res.send(result); 
     })

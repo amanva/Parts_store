@@ -6,12 +6,19 @@ import axios from "axios";
 
 
 
-function SearchBar ({onDataFromChild, fx} ) {
+function SearchBar ({onDataFromChild, name}) {
     const [books, setBooks] = useState([]);
     const [isLoading, setLoading] = useState(false);
     const [load, setLoad] = useState(true);
 
     const[searchInput, setSearchInput] = useState('');
+    //
+    /*
+      if slide.name = spoiler && searchValue == null && firstload
+        load slide.name
+      if slide.name = spoiler && searchValue = rims
+        load searchValue
+    */
     const searchItems = (searchValue) => {
         setSearchInput(searchValue)
         console.log(searchValue)
@@ -19,6 +26,7 @@ function SearchBar ({onDataFromChild, fx} ) {
 
     const handleSubmit = async (e) => {
       console.log("Working")
+
       if (e && e.preventDefault) { e.preventDefault(); }
       try{
       await fetch('http://localhost:3001/Shop/searchWord', {
@@ -57,14 +65,21 @@ function SearchBar ({onDataFromChild, fx} ) {
   }
  
    useEffect(() => { 
-      
-    console.log("UseEffect");
-    handleSubmit();
+    console.log("USE EFFECT");
+    if(searchValue !== null){
+      setSearchInput(name);
+    }
+    if(searchInput){
+      handleSubmit();
+    }
+    // setSearchInput(name);
+    // console.log("UseEffect");
+    // handleSubmit();
   
-}, []);
-useEffect(() => {
-  console.log("books updated", books);
-},[books]);
+}, [searchInput]);
+// useEffect(() => {  POSSIBLY NOT NEEDED
+//   console.log("books updated", books);
+// },[books]);
      
      
     

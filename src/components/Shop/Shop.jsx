@@ -7,6 +7,7 @@ import Product from "../Products/simpleProduct";
 import Begin from '../Begin/Begin';
 import {Select, MenuItem, FormControl, InputLabel} from "@mui/material";
 import { useState, useEffect } from 'react';
+import { Link, useParams, useLocation } from 'react-router-dom';
 
 // const[searchInput, seSearchInput] = useState("");
 const Shop = () => {
@@ -16,6 +17,12 @@ const Shop = () => {
         setBooks(data);
         // console.log(data);
       };
+    const {type} = useParams();
+    const location = useLocation();
+    const stateParamVal = location.state ? location.state.stateParam : null;
+    console.log("Props Paramter VAlue - " + type);
+    console.log("Props State VAlue - " + stateParamVal);
+
     return <>
     <Begin names = "Shop"/>
     
@@ -25,7 +32,7 @@ const Shop = () => {
                     {/* <h2> Browse our shop for hundreds of different automotive parts</h2> */}
                 </div>
         <div className="searchBar">
-            <SearchBar onDataFromChild = {handleDataFromChild}></SearchBar>
+            <SearchBar onDataFromChild = {handleDataFromChild} name = {type}></SearchBar>
             <FormControl>
 
             <InputLabel>Filter</InputLabel>
