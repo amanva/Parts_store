@@ -20,7 +20,6 @@ return (
             return(
               <Link to ={{
                 pathname: "/Shop/" + slide.name,
-                state: {stateParam: "Somethhing"}
               }}
               >
               <div

@@ -1,7 +1,7 @@
 import React from "react";
 import "./product.scss";
 
-export const simpleProduct =(props) =>{
+export const simpleProduct =(props, sort) =>{
     const{id, Part_Name, R_Price, R_Image, Sale, R_Sale_Amount} = props.data;
     const pricing =  Sale === 1 ? 'salePrice' : 'noSalePrice';
     const saleImage =  Sale === 1 ? 'sale' : 'noSalePrice';
