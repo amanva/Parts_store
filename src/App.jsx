@@ -35,7 +35,7 @@ function App() {
         <Route path = "login" element={<Login></Login>} />
         <Route path = "register" element={<Register></Register>} />
         
-        <Route path = "Shop" element={<Shop></Shop>} />
+        <Route path = "/Shop/:type" element={<Shop></Shop>} />
 
       </Routes>
       <Cart cartOpen={isOpen} toggleCart={ToggleSidebar}/>

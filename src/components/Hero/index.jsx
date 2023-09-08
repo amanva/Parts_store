@@ -82,6 +82,9 @@ function Hero(){
     <div className="wspGallery">
       <WSPGallery galleryImages = {galleryImages}/>
     </div>
+    <div className='companyHeading'>
+      <h2>These Are Our Top Manufacturers</h2>
+    </div>
     <div>
         <Company slides={galleryImages}/>
     </div>
