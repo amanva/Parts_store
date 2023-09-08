@@ -1,22 +1,19 @@
 .searchBar{
-        padding-top: 10px;
-        align-items: center;
+    padding-top: 10px;
+    align-items: center;
 }
 
 
 .searchInputs {
-    display:grid;
-    width: 500px;
-    grid-template-columns: 80% 20%;
+display:grid;
+width: 500px;
+grid-template-columns: 80% 20%;
 }
 
 .searchIcons {
-    height: 60px;
-    width: 50px;
-    background-color: white;
-    display: grid;
-    place-items: center;
-  }
- 
-
-
+height: 60px;
+width: 50px;
+background-color: white;
+display: grid;
+place-items: center;
+}
