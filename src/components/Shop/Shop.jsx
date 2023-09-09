@@ -15,33 +15,31 @@ const Shop = () => {
 
     const handleDataFromChild = (data) => {
         console.log("Parent Child connection established"); 
+        console.log(data);
         setBooks(data);
+        setSortedBooks(data);
       };
       const [shouldSort, setShouldSort] = useState(false); // State to control sorting
+      const [sortedBooks, setSortedBooks] = useState([]);
 
-    //   useEffect(() => {
-    //     // Define a sorting function
-    //     const sortingFunction = (a, b) => {
-    //         if (selectedValue === '1') {
-    //             return a.R_Price - b.R_Price;
-    //         } else if (selectedValue === '2') {
-    //             return b.R_Price - a.R_Price;
-    //         } else if (selectedValue === '3') {
-    //             return a.R_Quantity - b.R_Quantity;
-    //         } else if (selectedValue === '4') {
-    //             return b.R_Quantity - a.R_Quantity;
-    //         }
-    //         return 0; // Default case, no sorting
-    //     };
-    
-    //     if (shouldSort) {
-    //         // Create a new sorted array and set the state with it
-    //         const sortedData = [...books].sort(sortingFunction);
-    //         console.log(sortedData); // Check the sorted data in the console
-    //         setBooks(sortedData);
-    //         setShouldSort(false); // Reset the flag after sorting
-    //     }
-    // }, [selectedValue, books, shouldSort]);
+      useEffect(() => {
+        // Define a sorting function
+        const sortingFunction = (a, b) => {
+            if (selectedValue === '1') {
+                return a.R_Price - b.R_Price;
+            } else if (selectedValue === '2') {
+                return b.R_Price - a.R_Price;
+            } else if (selectedValue === '3') {
+                return a.R_Quantity - b.R_Quantity;
+            } else if (selectedValue === '4') {
+                return b.R_Quantity - a.R_Quantity;
+            }
+            return 0; // Default case, no sorting
+        };
+        const sortedBooks = [...books];
+        sortedBooks.sort(sortingFunction);
+        setSortedBooks(sortedBooks);
+    }, [selectedValue, books]);
 
     const {type} = useParams();
     const handleSelectChange = (event) => {
@@ -77,7 +75,7 @@ const Shop = () => {
             </Select>
             </FormControl>
         </div>
-        <div className='products'>{books.map((book) => <Product data = {book}></Product> )}</div>
+        <div className='products'>{sortedBooks.map((book) => <Product data = {book}></Product> )}</div>
         </div> 
     </>
 
