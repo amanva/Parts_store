@@ -1,5 +1,4 @@
 import './Begin.scss';
-
 function Begin({names}){
 return(
 <>

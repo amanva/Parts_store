@@ -1,19 +1,45 @@
 
 import { useState } from "react";
 import './Register.scss'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import axios from "axios"
+
 
 function Register() {
+    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
 
-	// const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     console.log(firstName);
-    // }
-   
+    const [userExists, setUserExists] = useState("");
+
+    const reg = async (e) => {
+        e.preventDefault();
+          await fetch('http://localhost:3001/register', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              email: email,
+              password: pass,
+            }),
+          })
+
+          getUser();
+          
+      }
+      const getUser = async () => {
+        try {
+          await axios.get("http://localhost:3001/register").then(response => {
+            setUserExists(response.data);
+            console.log(response.data);
+          })
+        } catch (err) {
+          console.log(err);
+        }
+      };
 
 return(
 <>
@@ -22,7 +48,8 @@ return(
 <div className="auth-form-container">
     <div className="register-box">
             <h2 className="mb-7 font-semibold">Create an account</h2>
-        <form className="register-form">
+        <form className="register-form" action = 'http://localhost:3001/register' onSubmit={reg}  method="POST">
+        {userExists == "" ? <></>: <h2 className="mb-7 font-semibold">{userExists}</h2>}
             <div className="userFirstName">
             <label className={firstName ? 'valueapply' : 'reg-label'} for="userFirstName">First Name</label>
             <input value={firstName} name="userFirstName" onChange={(e) => setFirstName(e.target.value)} id="userFirstName" placeholder=" " />

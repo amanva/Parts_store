@@ -1,18 +1,17 @@
-.wspGallery{
-    // background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 6%, rgb(0, 0, 0) 119.4%);
-    background-color: whitesmoke;
+.wspGallery {
+  // background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 6%, rgb(0, 0, 0) 119.4%);
+  background-color: whitesmoke;
 }
-.hero-container{
-   background-image: linear-gradient(0deg,black 30%,black 70%);;
-    width: 100%;
-    height: 50rem;
-
+.hero-container {
+  background-image: linear-gradient(0deg, black 30%, black 70%);
+  width: 100%;
+  height: 50rem;
 }
-.hero-main{
-width: 100%;
-height: 50rem;
+.hero-main {
+  width: 100%;
+  height: 50rem;
 
-&-title{
+  &-title {
     padding-top: 30px;
     display: flex;
     height: 10rem;
@@ -20,23 +19,23 @@ height: 50rem;
     margin: auto;
     justify-content: center;
 
-    span{
-        font-size: 5rem;
-        font-weight: 900;
-        background-clip: text;
-        color: transparent;
-        background-image: linear-gradient(25deg,#ec1707,#ff00ea);
+    span {
+      font-size: 5rem;
+      font-weight: 900;
+      background-clip: text;
+      color: transparent;
+      background-image: linear-gradient(25deg, #ec1707, #ff00ea);
     }
-    h1{
-        position: absolute;
-        color: white;
-        font-size: 4rem;
-        font-weight: 900;
+    h1 {
+      position: absolute;
+      color: white;
+      font-size: 4rem;
+      font-weight: 900;
     }
-}
-&-rotatingCar{
+  }
+  &-rotatingCar {
     height: 30rem;
-}
+  }
 }
 
   .wspGallery{
