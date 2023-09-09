@@ -45,6 +45,7 @@ app.post('/Shop/searchWord', (req,res)=>{
 
         res.send(result); 
     })
+    console.log("TESTTS");
 });
 
 app.get('/Shop/searchWord', (req,res)=>{
