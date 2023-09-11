@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Contact.scss'
 import Footer from '../Footer/Footer';
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -77,6 +78,7 @@ const Contact = () => {
                 <textarea placeholder="Enter message"></textarea>
 
                 <button type="submit">
+                  <i className="fas fa-mobile-alt"></i>send
                   <i className="fa-solid fa-envelope-circle-check"></i> Send
                 </button>
               </form>

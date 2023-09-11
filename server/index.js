@@ -110,34 +110,65 @@ app.get("/register", (req, res, next) => {
 });
 
 let globalVariable = "";
-app.post('/Shop/searchWord', (req,res)=>{
-    const word = req.body.searchWord
-    const sqlInsert = "SELECT * FROM rims WHERE Part_Name LIKE '%" + word + "%' UNION SELECT * FROM spoilers WHERE Part_Name LIKE '%" + word + "%' UNION SELECT * FROM intake WHERE Part_Name LIKE '%" + word + "%' UNION SELECT * FROM tail_lights WHERE Part_Name LIKE '%" + word + "%' UNION SELECT * FROM wheels WHERE Part_Name LIKE '%" + word + "%' UNION SELECT * FROM exhaust WHERE Part_Name LIKE '%" + word + "%';"; 
 
-    globalVariable =word
-    console.log("Confirmed");
-    db.query(sqlInsert, (err, result) => {
-        if(err) {
-            console.log(err)
-            } 
-        console.log(result);
+app.post('/Shop/searchWord', async (req, res) => {
+    const word = req.body.searchWord;
+    const sqlInsert = `
+        SELECT * FROM rims WHERE Part_Name LIKE ? 
+        UNION SELECT * FROM spoilers WHERE Part_Name LIKE ? 
+        UNION SELECT * FROM intake WHERE Part_Name LIKE ? 
+        UNION SELECT * FROM tail_lights WHERE Part_Name LIKE ? 
+        UNION SELECT * FROM wheels WHERE Part_Name LIKE ? 
+        UNION SELECT * FROM exhaust WHERE Part_Name LIKE ?;
+    `;
 
-        res.send(result); 
-    })
-    console.log("TESTTS");
+    globalVariable = word;
+
+
+    try {
+        const [rows] = await db.execute(sqlInsert, [
+            `%${word}%`,
+            `%${word}%`,
+            `%${word}%`,
+            `%${word}%`,
+            `%${word}%`,
+            `%${word}%`,
+        ]);
+
+        res.send(rows);
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Internal Server Error");
+    }
 });
 
-app.get('/Shop/searchWord', (req,res)=>{
+app.get('/Shop/searchWord', async (req, res) => {
     const word = globalVariable;
-    const sqlInsert = "SELECT * FROM rims WHERE Part_Name LIKE '%" + word + "%' UNION SELECT * FROM spoilers WHERE Part_Name LIKE '%" + word + "%' UNION SELECT * FROM intake WHERE Part_Name LIKE '%" + word + "%' UNION SELECT * FROM tail_lights WHERE Part_Name LIKE '%" + word + "%' UNION SELECT * FROM wheels WHERE Part_Name LIKE '%" + word + "%' UNION SELECT * FROM exhaust WHERE Part_Name LIKE '%" + word + "%';"; 
+    const sqlInsert = `
+        SELECT * FROM rims WHERE Part_Name LIKE ? 
+        UNION SELECT * FROM spoilers WHERE Part_Name LIKE ? 
+        UNION SELECT * FROM intake WHERE Part_Name LIKE ? 
+        UNION SELECT * FROM tail_lights WHERE Part_Name LIKE ? 
+        UNION SELECT * FROM wheels WHERE Part_Name LIKE ? 
+        UNION SELECT * FROM exhaust WHERE Part_Name LIKE ?;
+    `;
 
-    console.log("Confirmed1");
-    db.query(sqlInsert, (err, result) => {
-        if(err) {
-            console.log(err)
-            } 
-        res.send(result); 
-    })
+
+    try {
+        const [rows] = await db.execute(sqlInsert, [
+            `%${word}%`,
+            `%${word}%`,
+            `%${word}%`,
+            `%${word}%`,
+            `%${word}%`,
+            `%${word}%`,
+        ]);
+
+        res.send(rows);
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Internal Server Error");
+    }
 });
 
 
