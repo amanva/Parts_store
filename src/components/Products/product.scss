@@ -68,10 +68,12 @@
 
 }
 .images {
-  width: 280px;
+  width: 200px;
   height: 260px;
   margin: 0px; /* Center the image horizontally */
   overflow: hidden; /* Hide overflowing content */
+  display: flex;
+  justify-content: center;
   
 }
 

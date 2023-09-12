@@ -79,6 +79,7 @@ const Contact = () => {
                 <textarea placeholder="Enter message"></textarea>
 
                 <button type="submit">
+                  <i className="fas fa-mobile-alt"></i>send
                   <i className="fa-solid fa-envelope-circle-check"></i> Send
                 </button>
               </form>
