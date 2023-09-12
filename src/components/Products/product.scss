@@ -67,9 +67,9 @@
     height: 60px;
 
 }
-.images {
+.image {
   width: 200px;
-  height: 260px;
+  height: 200px;
   margin: 0px; /* Center the image horizontally */
   overflow: hidden; /* Hide overflowing content */
   display: flex;
@@ -77,13 +77,11 @@
   
 }
 
-.images img {
-  position: relative;
-  top: 0;
-  left: 0;
+.imageContainer{
   width: 100px;
   height: 100px;
 }
+
 .product .description {
   // background-color: #fdd7d7;
   // border-radius: 11px;
