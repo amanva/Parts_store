@@ -16,7 +16,7 @@ export const simpleProduct =(props, sort) =>{
     return (
         <div className="product">
             <div className="images">
-                <img className="h-10 w-1" src={R_Image}/>   
+                <img className="h-10 w-10" src={R_Image}/>   
                 
                 <div className={saleImage}>
                 {Sale ===1 ?<img src = "https://static.vecteezy.com/system/resources/previews/014/455/877/non_2x/illustration-of-sale-icon-on-transparent-background-free-png.png"></img>  : null}
@@ -31,7 +31,6 @@ export const simpleProduct =(props, sort) =>{
                         {/* <p className={pricing}>${R_Price}</p> */}
                         <p>Quantity: {R_Quantity}</p>
                     </div>
-                    
                 </div>
             </div>
             <button className="addToCartBttn" onClick={() => addToCart(id)}>
