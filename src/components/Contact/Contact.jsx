@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Contact.scss'
 import Footer from '../Footer/Footer';
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -53,6 +54,7 @@ const Contact = () => {
               </a>
         <div className="contact-container-main-text-socials">
           <h1> Find us: </h1>
+          {/* <FontAwesomeIcon icon="fa-brands fa-twitter" /> */}
         <i className="fa-brands fa-facebook-f px-[16px] py-[13px] bg-[#f4f4f4] rounded-full cursor-pointer hover:bg-[#ff0336] ease-in duration-200 hover:text-white"></i>
         <i className="fa-brands fa-twitter p-[13.5px] bg-[#f4f4f4] rounded-full cursor-pointer hover:bg-[#ff0336] ease-in duration-200 hover:text-white"></i>
         <i className="fa-brands fa-instagram p-[13.5px] bg-[#f4f4f4] rounded-full cursor-pointer hover:bg-[#ff0336] ease-in duration-200 hover:text-white"></i>

@@ -18,28 +18,28 @@ const Shop = () => {
         setBooks(data);
       };
 
-      useEffect(() => {
-        // Define a sorting function
+    //   useEffect(() => {
+    //     // Define a sorting function
         
 
-        // Sort the data and update the state
-        console.log(selectedValue);
-        // console.log(books.sort(sortingFunction));
-        if(selectedValue === 1){
-            books.sort((a,b) => a.R_Price - b.R_Price);
-        }
-        else if(selectedValue === 2){
-            books.sort((a,b) => b.R_Price - a.R_Price);
-        }
-        else if(selectedValue === 3){
-            books.sort((a,b) => a.R_Quantity - b.R_Quantity);
-        }
-        else if(selectedValue === 4){
-            books.sort((a,b) => b.R_Quantity - a.R_Quantity);
-        }
-        // const sortedData = books.sort(sortingFunction);
-        setBooks(books);
-    }, [selectedValue, books]);
+    //     // Sort the data and update the state
+    //     console.log(selectedValue);
+    //     // console.log(books.sort(sortingFunction));
+    //     if(selectedValue === 1){
+    //         books.sort((a,b) => a.R_Price - b.R_Price);
+    //     }
+    //     else if(selectedValue === 2){
+    //         books.sort((a,b) => b.R_Price - a.R_Price);
+    //     }
+    //     else if(selectedValue === 3){
+    //         books.sort((a,b) => a.R_Quantity - b.R_Quantity);
+    //     }
+    //     else if(selectedValue === 4){
+    //         books.sort((a,b) => b.R_Quantity - a.R_Quantity);
+    //     }
+    //     // const sortedData = books.sort(sortingFunction);
+    //     setBooks(books);
+    // }, [selectedValue, books]);
 
     const {type} = useParams();
     const handleSelectChange = (event) => {
