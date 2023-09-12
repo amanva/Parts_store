@@ -16,7 +16,9 @@ export const simpleProduct =(props, sort) =>{
     return (
         <div className="product">
             <div className="images">
-                <img className="h-10 w-1" src={R_Image}/>   
+                <div className="imageContainer w-40">
+                <img className="spec-image" src={R_Image}/>   
+                </div>
                 
                 <div className={saleImage}>
                 {Sale ===1 ?<img src = "https://static.vecteezy.com/system/resources/previews/014/455/877/non_2x/illustration-of-sale-icon-on-transparent-background-free-png.png"></img>  : null}
