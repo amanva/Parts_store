@@ -3,6 +3,10 @@ import { useState } from 'react'
 import './Chat.scss'
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faComment } from "@fortawesome/free-solid-svg-icons";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
+
 
 const API_KEY = "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";
 const systemMessage = { 
@@ -86,7 +90,7 @@ const Chat = () => {
     return (
       <div className="floating-button-container">
         <div className={`floating-button ${isOpen ? 'open' : ''}`} onClick={handleToggle}>
-      <span className="button-icon">{isOpen ? <i class="fa-solid fa-circle-xmark text-6xl"></i> : <i class="fa-sharp fa-solid fa-comments"></i>}</span>
+      <span className="button-icon">{isOpen ? <FontAwesomeIcon icon={faTimes} /> : <FontAwesomeIcon icon={faComment} />}</span>
     </div>
     {isOpen && (
       <div className='chat'>

@@ -1,4 +1,6 @@
 import './Begin.scss';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGreaterThan } from "@fortawesome/free-solid-svg-icons";
 function Begin({names}){
 return(
 <>
@@ -13,7 +15,7 @@ return(
             <div className="smallerContainer">
                 <h2>Home</h2>
                 <span class="greaterIcon">
-					<i aria-hidden="true" class="fas fa-chevron-right"></i>
+                    <FontAwesomeIcon icon={faGreaterThan} />
                 </span>
                 <span class="elementor-icon-list-text">{names}</span>
             </div>

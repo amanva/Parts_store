@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import './Contact.scss'
 import Footer from '../Footer/Footer';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faFacebook , faInstagram,faXTwitter, faPinterest } from "@fortawesome/free-brands-svg-icons"
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -47,18 +52,18 @@ const Contact = () => {
             services, or any other aspect of our business, 
             our contact team is committed to delivering prompt and accurate responses.</p>
             <a href="/">
-                <i className="fa-solid fa-mobile-screen"></i>&nbsp; (555) 234-5678
+              <FontAwesomeIcon icon={faPhone} />&nbsp; (555) 234-5678
               </a>
               <a href="/">
-                <i className="fa-solid fa-envelope"></i>&nbsp; GearHeadGarage@gmail.com
+              <FontAwesomeIcon icon={faEnvelope} />&nbsp; GearHeadGarage@gmail.com
               </a>
         <div className="contact-container-main-text-socials">
           <h1> Find us: </h1>
           {/* <FontAwesomeIcon icon="fa-brands fa-twitter" /> */}
-        <i className="fa-brands fa-facebook-f px-[16px] py-[13px] bg-[#f4f4f4] rounded-full cursor-pointer hover:bg-[#ff0336] ease-in duration-200 hover:text-white"></i>
-        <i className="fa-brands fa-twitter p-[13.5px] bg-[#f4f4f4] rounded-full cursor-pointer hover:bg-[#ff0336] ease-in duration-200 hover:text-white"></i>
-        <i className="fa-brands fa-instagram p-[13.5px] bg-[#f4f4f4] rounded-full cursor-pointer hover:bg-[#ff0336] ease-in duration-200 hover:text-white"></i>
-        <i className="fa-brands fa-pinterest-p p-[13.5px] bg-[#f4f4f4] rounded-full cursor-pointer hover:bg-[#ff0336] ease-in duration-200 hover:text-white"></i>
+        <FontAwesomeIcon icon={faFacebook} />
+        <FontAwesomeIcon icon={faXTwitter} />
+        <FontAwesomeIcon icon={faInstagram} />
+        <FontAwesomeIcon icon={faPinterest} />
         </div>
         </div>
       <div className="contact-container-main-form">
@@ -79,8 +84,8 @@ const Contact = () => {
                 <textarea placeholder="Enter message"></textarea>
 
                 <button type="submit">
-                  <i className="fas fa-mobile-alt"></i>send
-                  <i className="fa-solid fa-envelope-circle-check"></i> Send
+                <FontAwesomeIcon icon={faPhone} />
+                <FontAwesomeIcon icon={faEnvelope} />    
                 </button>
               </form>
             </div>

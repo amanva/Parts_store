@@ -4,9 +4,11 @@ import team2 from '../../assets/team2.jpg'
 import team3 from '../../assets/team3.jpg'
 import Begin from '../Begin/Begin';
 import Footer from '../Footer/Footer';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faFacebook, faInstagram,faXTwitter } from "@fortawesome/free-brands-svg-icons"
+
 import { ShopContextProvider } from "../../shop-context";
 import { Shop } from '../../shop';
-
 
 function Team(){
     const testimonials = [
@@ -67,18 +69,18 @@ const TeamBox = ({ name, image, position}) => {
         <ul className="team-socials">
           <li className="icons">
           <a href="https://facebook.com">
-          <i class="fa-brands fa-facebook text-white"></i>
+          <FontAwesomeIcon icon={faFacebook} /> 
           </a>
           </li>
           
           <li className="icons">
           <a href="https://instagram.com">
-          <i class="fa-brands fa-square-instagram text-white"></i>
+          <FontAwesomeIcon icon={faInstagram} />
           </a>
           </li>
           <li className="icons">
           <a href="https://twitter.com">
-          <i class="fa-brands fa-twitter text-white"></i>
+          <FontAwesomeIcon icon={faXTwitter} />
           </a>
           </li>
         </ul>

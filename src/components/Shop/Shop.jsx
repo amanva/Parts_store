@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import "./Shop.scss"
 import SearchBar from '../SearchBar/SearchBar';
 // import { useState } from 'react'
@@ -8,15 +8,18 @@ import Begin from '../Begin/Begin';
 import {Select, MenuItem, FormControl, InputLabel} from "@mui/material";
 import { useState, useEffect } from 'react';
 import { Link, useParams, useLocation } from 'react-router-dom';
+import { ShopContext } from "../../shop-context";
+
 
 const Shop = () => {
     const [books, setBooks] = useState([]);
     const[selectedValue, setSelectedValue] = useState('');
+    const { setData } = useContext(ShopContext);
 
     const handleDataFromChild = (data) => {
         console.log("Parent Child connection established"); 
-        console.log(data);
         setBooks(data);
+        
         setSortedBooks(data);
       };
       const [shouldSort, setShouldSort] = useState(false); // State to control sorting
@@ -43,7 +46,6 @@ const Shop = () => {
 
     const {type} = useParams();
     const handleSelectChange = (event) => {
-        // console.log(event.target.value)
 
         setSelectedValue(event.target.value);
     }
