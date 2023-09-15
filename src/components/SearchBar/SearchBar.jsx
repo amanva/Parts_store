@@ -35,7 +35,6 @@ function SearchBar ({onDataFromChild, name}) {
     // }
 
     const handleSubmit = async (value) => {
-      console.log("Working")
       if(value === name){
         setSearchInput("");
       }
@@ -61,7 +60,6 @@ function SearchBar ({onDataFromChild, name}) {
 
   const fetchAllBooks = async () => {
     try {
-      console.log("Getting sql query");
       await axios.get("http://localhost:3001/Shop/searchWord").then(response => {
         console.log(response.data);
         setBooks(response.data);

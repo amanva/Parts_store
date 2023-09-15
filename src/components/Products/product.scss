@@ -31,6 +31,7 @@
   border-radius: 0px;
   // width: 300px;
   // height: 350px;
+
   margin:20px ;
   background-color: white;
 
@@ -56,7 +57,7 @@
 .product:hover {
   
     transform: scale(1.05);
-    filter: none;
+    // filter: none;
     
   }
 .sale{
@@ -100,9 +101,31 @@
 }
 
 .product:hover {
-  transition: 0.3s ease-in;
+  transition: 0.5s ease-in;
   cursor: pointer;
 }
+
+.product:hover .addToCartBttn{
+  display: block;
+  opacity: 1;
+  
+}
+.addToCartBttn:hover{
+  background-color: rgb(255, 15, 15);
+
+}
+.addToCartBttn{
+  position: absolute;
+  opacity: 0;
+  transition-duration: 0.5s;
+  color:white;
+  background-color: rgba(253, 82, 82, 0.815);
+  display: flex;
+  justify-content: center;
+  border-radius: 0px;
+  border: 0px;
+}
+
 
 // .addToCartBttn {
 //   background-color: transparent;

@@ -32,7 +32,6 @@ export const simpleProduct =(props, sort) =>{
                         {/* <p className={pricing}>${R_Price}</p> */}
                         <p>Quantity: {R_Quantity}</p>
                     </div>
-                    
                 </div>
             </div>
             <button className="addToCartBttn" onClick={() => addToCart(id)}>

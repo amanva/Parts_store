@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow-y: auto;
 }
 
 .cartItem {
@@ -19,8 +20,6 @@
 .cartItem img {
   width: 100px;
 }
-
-
 
 .countHandler input {
   width: 60px;
