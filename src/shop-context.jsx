@@ -11,20 +11,24 @@ export const ShopContextProvider = (props) => {
   const getDefaultCart = () => {
     let cart = {};
     console.log(itemData);
+    
     itemData.map((data) => {
-      
-      cart[data.ID] = 0;
+      cart[data.Part_Name] = 0;
     })
+    console.log(cart);
     return cart;
   };
   const [cartItems, setCartItems] = useState(getDefaultCart());
+  console.log(getDefaultCart());
+
 
   const getTotalCartAmount = () => {
     let totalAmount = 0;
     for (const item in cartItems) {
+      console.log(item);
       if (cartItems[item] > 0) {
-        let itemInfo = itemData.find((product) => product.ID === Number(item));
-        totalAmount += cartItems[item] * itemInfo.price;
+        let itemInfo = itemData.find((product) => product.Part_Name === item);
+        totalAmount += cartItems[item] * itemInfo.R_Price;
       }
     }
     return totalAmount;
@@ -32,15 +36,21 @@ export const ShopContextProvider = (props) => {
   const getData = () => {
     return itemData;
   }
-  const setData = (data) => {
-    setItemData(data);
-  }
+  // const setData = (data) => {
+  //   setItemData(data);
+  // }
   const addToCart = (itemId) => {
     console.log("CART");
-    console.log(itemData);
+    console.log(itemId);
     
-    setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
+    setCartItems((prev) => ({
+      ...prev,
+      [itemId]: parseInt(prev[itemId], 10) + 1, // Parse as integer
+    }));
+    console.log(totalItems);
     setTotalItems(totalItems+1);
+    console.log(cartItems);
+
   };
 
   const removeFromCart = (itemId) => {
@@ -65,7 +75,7 @@ export const ShopContextProvider = (props) => {
     removeFromCart,
     getTotalCartAmount,
     checkout,
-    setData,
+    // setData,
     getData,
   };
 
@@ -93,7 +103,6 @@ const fetchAllBooks = async () => {
     await axios.get("http://localhost:3001/Shop/searchWord").then(response => {
       // console.log(response.data);
       setItemData(response.data);
-      
     })
   } catch (err) {
     console.log(err);

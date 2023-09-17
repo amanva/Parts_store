@@ -4,13 +4,14 @@ import { ShopContext } from "../../shop-context";
 
 
 export const simpleProduct =(props, sort) =>{
+
     const{id, Part_Name, R_Price, R_Image, Sale, R_Sale_Amount, R_Quantity} = props.data;
     const pricing =  Sale === 1 ? 'salePrice' : 'noSalePrice';
     const saleImage =  Sale === 1 ? 'sale' : 'noSalePrice';
     
     const { addToCart, cartItems } = useContext(ShopContext);
 
-    const cartItemCount = cartItems[id];
+    const cartItemCount = cartItems[Part_Name];
     const width = 40;
     const height = 100;
     return (
@@ -35,7 +36,7 @@ export const simpleProduct =(props, sort) =>{
                     </div>
                 </div>
             </div>
-            <button className="addToCartBttn" onClick={() => addToCart(id)}>
+            <button className="addToCartBttn" onClick={() => addToCart(Part_Name)}>
                 Add To Cart {cartItemCount > 0 && <> ({cartItemCount})</>}
             </button>
         </div>

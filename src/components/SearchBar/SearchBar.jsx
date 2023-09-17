@@ -61,9 +61,9 @@ function SearchBar ({onDataFromChild, name}) {
   const fetchAllBooks = async () => {
     try {
       await axios.get("http://localhost:3001/Shop/searchWord").then(response => {
-        console.log(response.data);
+        // console.log(response.data);
         setBooks(response.data);
-        console.log(books);
+        // console.log(books);
         setLoading(true);
       })
     } catch (err) {
@@ -71,7 +71,7 @@ function SearchBar ({onDataFromChild, name}) {
     }
   };
   if (isLoading) {
-    console.log("Sending data to parent");
+    // console.log("Sending data to parent");
     onDataFromChild(books);
     setLoading(false);
   }

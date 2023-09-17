@@ -8,16 +8,14 @@ import Begin from '../Begin/Begin';
 import {Select, MenuItem, FormControl, InputLabel} from "@mui/material";
 import { useState, useEffect } from 'react';
 import { Link, useParams, useLocation } from 'react-router-dom';
-import { ShopContext } from "../../shop-context";
 
 
 const Shop = () => {
     const [books, setBooks] = useState([]);
     const[selectedValue, setSelectedValue] = useState('');
-    const { setData } = useContext(ShopContext);
 
     const handleDataFromChild = (data) => {
-        console.log("Parent Child connection established"); 
+        // console.log("Parent Child connection established"); 
         setBooks(data);
         
         setSortedBooks(data);
