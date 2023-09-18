@@ -5,11 +5,10 @@
 .hero-container {
   background-image: linear-gradient(0deg, black 30%, black 70%);
   width: 100%;
-  height: 50rem;
+  height: 30rem;
 }
 .hero-main {
   width: 100%;
-  height: 50rem;
 
   &-title {
     padding-top: 30px;
@@ -37,7 +36,12 @@
     height: 30rem;
   }
 }
+.car{
+  display: flex;
+  justify-content: center;
+  align-content: center;
 
+}
   .wspGallery{
     text-align: center;
     padding: 50px;
@@ -45,9 +49,15 @@
     
   }
   .companyHeading{
+    background-color: whitesmoke;
     font-size: 30px;
     text-align: center;
     padding-bottom: 25px;
     padding-top: 25px;
+    
 
   }
+  .companyHeading div{
+    background-color: whitesmoke;
+  }
+

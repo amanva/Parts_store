@@ -6,24 +6,29 @@ import './cart.css';
 
 export const List = () => {
   const { cartItems, getTotalCartAmount, checkout, getData } = useContext(ShopContext);
-  const totalAmount = getTotalCartAmount();
+  const totalAmount = Math.round(getTotalCartAmount()*100)/100;
   const [data, setData ] = useState(getData());
+
+  
   
   useEffect(() => {
     // Fetch data from the context when the component mounts or when the data changes
+
     setData(getData());
   }, [getData]);
-  console.log(data);
   return (
     <div className="cart">
       <div>
-      </div>
-      <div className="cart">
-        {data.map((product) => {
-          if (cartItems[product.ID] !== 0) {
-            return <CartItem data={product} />;
-          }
-        })}
+      {Object.keys(cartItems).map((key) => {
+        const quantity = cartItems[key];
+        const product = data.find((p) => p.Part_Name === key);
+
+        if (quantity !== 0 && product) {
+          return <CartItem data={product} />;
+        }
+
+        return null; // or an empty fragment <></> if you want to skip rendering
+      })}
       </div>
       {totalAmount > 0 ? (
         <div className="checkout">

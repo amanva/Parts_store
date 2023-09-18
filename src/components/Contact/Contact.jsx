@@ -4,7 +4,7 @@ import Footer from '../Footer/Footer';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFacebook , faInstagram,faXTwitter, faPinterest } from "@fortawesome/free-brands-svg-icons"
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faPhone, faEnvelopeCircleCheck } from "@fortawesome/free-solid-svg-icons";
 
 
 const Contact = () => {
@@ -60,10 +60,10 @@ const Contact = () => {
         <div className="contact-container-main-text-socials">
           <h1> Find us: </h1>
           {/* <FontAwesomeIcon icon="fa-brands fa-twitter" /> */}
-        <FontAwesomeIcon icon={faFacebook} />
-        <FontAwesomeIcon icon={faXTwitter} />
-        <FontAwesomeIcon icon={faInstagram} />
-        <FontAwesomeIcon icon={faPinterest} />
+        <FontAwesomeIcon className= "px-[16px] py-[13px] bg-[#f4f4f4] rounded-full cursor-pointer hover:bg-[#ff0336] ease-in duration-200 hover:text-white" icon={faFacebook} />
+        <FontAwesomeIcon className= "px-[16px] py-[13px] bg-[#f4f4f4] rounded-full cursor-pointer hover:bg-[#ff0336] ease-in duration-200 hover:text-white" icon={faXTwitter} />
+        <FontAwesomeIcon className= "px-[16px] py-[13px] bg-[#f4f4f4] rounded-full cursor-pointer hover:bg-[#ff0336] ease-in duration-200 hover:text-white" icon={faInstagram} />
+        <FontAwesomeIcon className= "px-[16px] py-[13px] bg-[#f4f4f4] rounded-full cursor-pointer hover:bg-[#ff0336] ease-in duration-200 hover:text-white" icon={faPinterest} />
         </div>
         </div>
       <div className="contact-container-main-form">
@@ -84,8 +84,7 @@ const Contact = () => {
                 <textarea placeholder="Enter message"></textarea>
 
                 <button type="submit">
-                <FontAwesomeIcon icon={faPhone} />
-                <FontAwesomeIcon icon={faEnvelope} />    
+                <FontAwesomeIcon icon={faEnvelopeCircleCheck} />    
                 </button>
               </form>
             </div>

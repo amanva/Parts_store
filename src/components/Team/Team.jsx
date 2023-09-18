@@ -48,7 +48,7 @@ function Team(){
   </div>
 </div>
 
-<Shop></Shop>
+{/* <Shop></Shop> */}
 </section>
 <Footer></Footer>
 </>
