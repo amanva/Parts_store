@@ -15,14 +15,14 @@
   
 }
 .description{
-  // position: absolute;
+  position: absolute;
   width: 100%;
   height: 80px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
   bottom: 0;
-  align-content: center;
+  // align-content: center;
 }
 .product {
   // display: grid;
@@ -68,18 +68,17 @@
     height: 60px;
 
 }
-.image {
-  width: 200px;
-  height: 200px;
+.images {
+  position: relative;
   margin: 0px; /* Center the image horizontally */
   overflow: hidden; /* Hide overflowing content */
   display: flex;
   justify-content: center;
   
 }
-
 .imageContainer{
-  width: 200px;
+  position: absolute;
+  // width: 200px;
   height: 200px;
 }
 
