@@ -14,7 +14,7 @@ import Footer from '../Footer/Footer';
 import WSPGallery from '../Gallery';
 import Company from "../Company"
 import { Color } from 'three';
-
+import car from "../../assets/homePage.png"
 
 function Hero(){
   const galleryImages =[
@@ -57,12 +57,14 @@ function Hero(){
     <section id="home" className="hero-container">
       <div className="container">
     <div className="hero-main">
-      <div className="hero-main-title">
-        {/* <h1>Welcome to <span>Gear Head Garage</span> where you can rev up your ride with quality parts</h1> */}
+      {/* <div className="hero-main-title">
         <span>Gear Head Garage</span>
+      </div> */}
+      <div className= "car">
+        <img  src ={car}></img>
       </div>
-    <div className="hero-main-rotatingCar">
-    <Canvas>
+    {/* <div className="hero-main-rotatingCar"> */}
+    {/* <Canvas>
     <ambientLight intensity={4} />
       <spotLight position={[10, 10, 10]} angle={0.45} penumbra={0} />
       <pointLight position={[-100, -10, -10]} />
@@ -72,10 +74,10 @@ function Hero(){
         enablePan={false} autoRotate autoRotateSpeed={3}/>
     </Suspense>
     </Canvas>
-    </div>
-    <div className="hero-main-title">
+    </div> */}
+    {/* <div className="hero-main-title">
     <h1>rev up your ride with quality parts</h1>
-    </div>
+    </div> */}
     </div>
     </div>
    
@@ -83,6 +85,7 @@ function Hero(){
       <WSPGallery galleryImages = {galleryImages}/>
     </div>
     <div className='companyHeading'>
+      <div><br></br></div>
       <h2>These Are Our Top Manufacturers</h2>
     </div>
     <div>

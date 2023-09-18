@@ -12,14 +12,14 @@ export const simpleProduct =(props, sort) =>{
     const { addToCart, cartItems } = useContext(ShopContext);
 
     const cartItemCount = cartItems[Part_Name];
-    const width = 40;
+    const width = 20;
     const height = 100;
     return (
         <div className="product">
             <div className="images">
-            <div className={`imageContainer w-${width}`}>
+            <div className={`imageContainer`}>
                 <img className="spec-image" src={R_Image}/>   
-                </div>
+            </div>
                 
                 <div className={saleImage}>
                 {Sale ===1 ?<img src = "https://static.vecteezy.com/system/resources/previews/014/455/877/non_2x/illustration-of-sale-icon-on-transparent-background-free-png.png"></img>  : null}
@@ -30,7 +30,7 @@ export const simpleProduct =(props, sort) =>{
                 <div className="bot"> 
                     <p> <b>{Part_Name}</b></p>
                     <div className="price">
-                        {Sale === 1 ? <div className="twoPrice"><p className={pricing}>${R_Sale_Amount}</p><p className={'noSalePrice'}>${R_Price}</p></div> :  <p className={pricing}>${R_Price}</p>}
+                        {Sale === 1 ? <div className="twoPrice"><p className={pricing}>${R_Price}</p><p className={'noSalePrice'}>${R_Sale_Amount}</p></div> :  <p className={pricing}>${R_Price}</p>}
                         {/* <p className={pricing}>${R_Price}</p> */}
                         <p>Quantity: {R_Quantity}</p>
                     </div>

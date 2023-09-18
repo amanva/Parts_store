@@ -6,8 +6,9 @@ export const CartItem = (props) => {
   const { cartItems, addToCart, removeFromCart, updateCartItemCount } =
     useContext(ShopContext);
 
-  const cartItemCount = cartItems[Part_Name]; 
+  const cartItemCount = cartItems[String(Part_Name)]; // Convert Part_Name to string
   console.log(cartItems);
+  
   return (
     <div className="cartItem">
       <img src={R_Image} alt={`Image of ${Part_Name}`} />

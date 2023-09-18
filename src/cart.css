@@ -1,24 +1,28 @@
 .cart {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* Adjust to your preferred vertical alignment */
   align-items: center;
-  overflow-y: auto;
+  overflow-y: auto; /* Enable vertical scrolling */
+  column-gap: 10px;
 }
 
 .cartItem {
-  width: 300px;
-  height: 250px;
+  /* width: 290px; */
   display: flex;
-
   align-items: center;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
   border-radius: 25px;
-  margin: 30px;
+  margin-bottom: 30px;
+  padding: 10px;
+  gap: 15px;
 }
 
 .cartItem img {
   width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  border: 1px black solid;
 }
 
 .countHandler input {

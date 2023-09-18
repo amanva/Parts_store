@@ -119,6 +119,7 @@ app.post('/Shop/searchWord', async (req, res) => {
         UNION SELECT * FROM intake WHERE Part_Name LIKE ? 
         UNION SELECT * FROM tail_lights WHERE Part_Name LIKE ? 
         UNION SELECT * FROM wheels WHERE Part_Name LIKE ? 
+        UNION SELECT * FROM brakes WHERE Part_Name LIKE ? 
         UNION SELECT * FROM exhaust WHERE Part_Name LIKE ?;
     `;
 
@@ -127,6 +128,7 @@ app.post('/Shop/searchWord', async (req, res) => {
 
     try {
         const [rows] = await db.execute(sqlInsert, [
+            `%${word}%`,
             `%${word}%`,
             `%${word}%`,
             `%${word}%`,
@@ -150,12 +152,14 @@ app.get('/Shop/searchWord', async (req, res) => {
         UNION SELECT * FROM intake WHERE Part_Name LIKE ? 
         UNION SELECT * FROM tail_lights WHERE Part_Name LIKE ? 
         UNION SELECT * FROM wheels WHERE Part_Name LIKE ? 
+        UNION SELECT * FROM brakes WHERE Part_Name LIKE ? 
         UNION SELECT * FROM exhaust WHERE Part_Name LIKE ?;
     `;
 
 
     try {
         const [rows] = await db.execute(sqlInsert, [
+            `%${word}%`,
             `%${word}%`,
             `%${word}%`,
             `%${word}%`,
