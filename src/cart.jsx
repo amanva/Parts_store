@@ -6,7 +6,7 @@ import './cart.css';
 
 export const List = () => {
   const { cartItems, getTotalCartAmount, checkout, getData } = useContext(ShopContext);
-  const totalAmount = Math.round(getTotalCartAmount()*100)/100;
+  const totalAmount = Math.round(getTotalCartAmount()*100)/100  ;
   const [data, setData ] = useState(getData());
 
   
