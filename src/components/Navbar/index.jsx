@@ -37,10 +37,10 @@ function Navbar({cartFunction}){
         <FontAwesomeIcon icon={faCartShopping} />
       </span>
     </div>
-  <Link to="/login" className= "bg-red-500 text-white rounded-md px-8 py-2 text-base font-medium hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-green-300" >
+  <Link to="/login" className= "link-button" >
               Sign In
             </Link>
-            <Link to="/register" className= "bg-red-500 text-white rounded-md px-8 py-2 text-base font-medium hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-green-300">
+            <Link to="/register" className= "link-button">
               Register
             </Link>
             

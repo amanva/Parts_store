@@ -7,9 +7,9 @@ height: 3rem;
 display: flex;
 background-color: rgb(255, 255, 255);
 padding: 0 20px;
-justify-content: space-between;
+justify-content:space-around;
 align-items: center;
-box-shadow: 0px 0px 5px 3px rgba(39, 39, 39, 0.87);
+box-shadow: 0px 5px 5px 3px rgba(39, 39,  39, 0.87);
 &-imglogo{
     display: flex;
     align-items: center;
@@ -59,4 +59,50 @@ h1{
     }
 }
 }
+.link-button {
+    background-color: red;
+    color: white;
+    border-radius: 0.25rem; /* Equivalent to Tailwind's rounded-md */
+    padding: 0.5rem 1rem; /* Equivalent to Tailwind's px-8 py-2 */
+    font-size: 1rem; /* Equivalent to Tailwind's text-base */
+    font-weight: 500; /* Equivalent to Tailwind's font-medium */
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    text-decoration: none; /* Remove underlines */
+    display: inline-block;
+  }
+  
+  .link-button:hover {
+    background-color: #7f1d1d; /* Equivalent to Tailwind's hover:bg-red-700 */
+  }
+  
+  .link-button:focus {
+    outline: none; /* Equivalent to Tailwind's focus:outline-none */
+    box-shadow: 0 0 0 3px rgba(72, 255, 0, 0.5); /* Equivalent to Tailwind's focus:ring-2 and focus:ring-green-300 */
+  }
+  
+  /* Media query for screens with a maximum width of 900px */
+  @media screen and (max-width: 1036px) {
+    /* Reduce the padding and font size for smaller screens */
+    .link-button {
+      padding: 0.25rem 0.5rem; /* Adjust padding as needed */
+      font-size: 0.875rem; /* Adjust font size as needed */
+    }
+    .navbar-buttons{
+        padding: 0px;
+        gap: 1px;
+    }
+    .navbar{
+        &-links{
+            gap: 1rem;
+        }
+        
+    }
+    // .navbar h1 {
+    //     margin-right: 10px; /* Adjust the margin as needed */
+    //   }
+      
+    //   .navbar-links li:first-child {
+    //     margin-left: 0px; /* Adjust the margin as needed */
+    //   }
+  }
 

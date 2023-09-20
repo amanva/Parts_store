@@ -9,7 +9,6 @@ export const simpleProduct =(props, sort) =>{
     const saleImage =  Sale === 1 ? 'sale' : 'noSalePrice';
     
     const { addToCart, cartItems } = useContext(ShopContext);
-
     const cartItemCount = cartItems[id];
     return (
         <div className="product">

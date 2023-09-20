@@ -2,7 +2,8 @@ import React, {useContext} from 'react'
 import "./Shop.scss"
 import SearchBar from '../SearchBar/SearchBar';
 // import { useState } from 'react'
-import products from "../Products/products";
+import Footer from '../Footer/Footer';
+
 import Product from "../Products/simpleProduct";
 import Begin from '../Begin/Begin';
 import {Select, MenuItem, FormControl, InputLabel} from "@mui/material";
@@ -77,6 +78,7 @@ const Shop = () => {
         </div>
         <div className='products'>{sortedBooks.map((book) => <Product data = {book}></Product> )}</div>
         </div> 
+        <Footer></Footer>
     </>
 
 }
