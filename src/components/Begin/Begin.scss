@@ -43,3 +43,12 @@
     width: 200px;
     gap: 20px;
 }
+@media screen and (max-width: 540px) {
+    .beginBox{
+        width: 350px;
+        
+        h1{
+            font-size: 30px;
+        }
+    }
+}

@@ -7,7 +7,7 @@ height: 3rem;
 display: flex;
 background-color: rgb(255, 255, 255);
 padding: 0 20px;
-justify-content:space-around;
+justify-content:space-between;
 align-items: center;
 box-shadow: 0px 5px 5px 3px rgba(39, 39,  39, 0.87);
 &-imglogo{
@@ -88,21 +88,56 @@ h1{
       font-size: 0.875rem; /* Adjust font size as needed */
     }
     .navbar-buttons{
+        position: relative;
         padding: 0px;
         gap: 1px;
+        right: 50px;
     }
     .navbar{
         &-links{
-            gap: 1rem;
+            position: relative;
+            gap: .5rem;
+            right: 50px;
+        }
+        &-imglogo{
+            // position: relative;
+            // display: flex;
+            // align-items: center;
+            width: 3rem;
+            // left: 50px;
         }
         
     }
-    // .navbar h1 {
-    //     margin-right: 10px; /* Adjust the margin as needed */
-    //   }
-      
-    //   .navbar-links li:first-child {
-    //     margin-left: 0px; /* Adjust the margin as needed */
-    //   }
+  }
+
+  @media screen and (max-width: 670px) {
+    
+    .navbar{
+        font-size: 10px;
+        &-links{
+            position: relative;
+            gap: .5rem;
+            right: 70px;
+        }
+        h1{
+            font-size: 20px;
+        }
+        &-imglogo{
+           position: relative;
+           left: 10px;
+            width: 2rem;
+        }
+        padding: 0px;
+    }
+    .navbar-buttons{
+        position: relative;
+        padding: 0px;
+        gap: 1px;
+        right: 70px;
+        width: 130px;
+        .link-button{
+            font-size: 10px;
+        }
+    }
   }
 

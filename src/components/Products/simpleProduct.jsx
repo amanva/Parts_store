@@ -10,6 +10,7 @@ export const simpleProduct =(props, sort) =>{
     
     const { addToCart, cartItems } = useContext(ShopContext);
     const cartItemCount = cartItems[id];
+    console.log(Width);
     return (
         <div className="product">
             <div className="images">

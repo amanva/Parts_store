@@ -57,23 +57,23 @@ const Shop = () => {
                 </div>
         <div className="searchBar">
             <SearchBar onDataFromChild = {handleDataFromChild} name = {type}></SearchBar>
-            <FormControl>
+            <FormControl style={{ marginLeft: '-150px' }}>
 
-            <InputLabel>Filter</InputLabel>
+                <InputLabel>Filter</InputLabel>
 
-            <Select 
-                sx={{
-                width: 250,
-                height: 50,
-                }}
-                value={selectedValue}
-                onChange={handleSelectChange}
-            >
-                <MenuItem defaultValue = {1} value={'1'}>Sort By Price: Low To High</MenuItem>
-                <MenuItem defaultValue = {1} value={'2'}>Sort By Price: High To Low</MenuItem>
-                <MenuItem defaultValue = {1} value={'3'}>Sort By Quantity: Low To High</MenuItem>
-                <MenuItem defaultValue = {1} value={'4'}>Sort By Quantity: High To Low</MenuItem>
-            </Select>
+                <Select 
+                    sx={{
+                    width: 190,
+                    height: 50,
+                    }}
+                    value={selectedValue}
+                    onChange={handleSelectChange}
+                >
+                    <MenuItem defaultValue = {1} value={'1'}>Sort By Price: Low To High</MenuItem>
+                    <MenuItem defaultValue = {1} value={'2'}>Sort By Price: High To Low</MenuItem>
+                    <MenuItem defaultValue = {1} value={'3'}>Sort By Quantity: Low To High</MenuItem>
+                    <MenuItem defaultValue = {1} value={'4'}>Sort By Quantity: High To Low</MenuItem>
+                </Select>
             </FormControl>
         </div>
         <div className='products'>{sortedBooks.map((book) => <Product data = {book}></Product> )}</div>
