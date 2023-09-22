@@ -10,11 +10,10 @@ export const simpleProduct =(props, sort) =>{
     
     const { addToCart, cartItems } = useContext(ShopContext);
     const cartItemCount = cartItems[id];
-    console.log(Width);
     return (
         <div className="product">
             <div className="images">
-                <div className={`imageContainer w-${Width}`}>
+            <div style={{ width: `${Width}px` }}>
                 <img className="w-4 h-auto" src={R_Image} alt="Product Image" />  
                 </div>
             </div>
