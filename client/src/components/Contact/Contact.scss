@@ -55,7 +55,7 @@
   height: 15rem;
   position: relative;
   background-color: #fffdfd;
-  background-image: url('/src/assets/contactus.jpg');
+  background-image: url('../../assets/contactus.jpg');
   background-position: left;
   background-position-x: -25%;
   background-size: 60%;
@@ -112,7 +112,7 @@
     font-weight: 600;
     cursor: pointer;
 
-    &:hover {
+    &:hover { 
       box-shadow: 0 10px 15px 0 rgba(230, 40, 2, 0.6);
     }
   }
