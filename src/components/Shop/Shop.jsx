@@ -57,14 +57,15 @@ const Shop = () => {
                 </div>
         <div className="searchBar">
             <SearchBar onDataFromChild = {handleDataFromChild} name = {type}></SearchBar>
-            <FormControl>
+            <FormControl style={{ marginLeft: '-240px' }}>
 
-            <InputLabel>Filter</InputLabel>
+            <InputLabel className='label'>Filter</InputLabel>
 
             <Select 
                 sx={{
-                width: 250,
+                width: 240,
                 height: 50,
+                marginTop: 0.8,
                 }}
                 value={selectedValue}
                 onChange={handleSelectChange}

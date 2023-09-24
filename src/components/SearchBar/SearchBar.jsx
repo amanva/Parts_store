@@ -12,27 +12,7 @@ function SearchBar ({onDataFromChild, name}) {
     const [load, setLoad] = useState(true);
     const[firstRender, setFirstRender] = useState(false)
     const[searchInput, setSearchInput] = useState('');
-    //
-    /*
-      if slide.name = spoiler && searchValue == null && firstload
-        load slide.name
-      if slide.name = spoiler && searchValue = rims
-        load searchValue
-    */
-    // const searchItems = (searchValue) => {
-    //   if(searchValue === name && firstRender === false){
-    //     setFirstRender(true);
-    //     setSearchInput(searchValue);
-    //     handleSubmit(searchValue);
 
-    //   }
-    //   else if(searchValue === ""){
-    //     setSearchInput("");
-    //   }
-    //   else{
-    //     setSearchInput(searchValue);
-    //   }
-    // }
 
     const handleSubmit = async (value) => {
       if(value === name){
