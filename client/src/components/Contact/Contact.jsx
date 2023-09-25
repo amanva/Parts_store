@@ -71,17 +71,17 @@ const Contact = () => {
                 <label className='contact-label'>
                   Full Name 
                 </label>
-                <input type="text" placeholder='Jane Doe'></input>
+                <input type="text" placeholder='Jane Doe' required></input>
 
                 <label className='contact-label'>
                   Email 
                 </label>
-                <input type="email" placeholder="email@gmail.com"></input>
+                <input type="email" placeholder="email@gmail.com" required></input>
 
                 <label className='contact-label'>
                   Comment 
                 </label>
-                <textarea placeholder="Enter message"></textarea>
+                <textarea placeholder="Enter message" required></textarea>
 
                 <button type="submit">
                 <FontAwesomeIcon icon={faEnvelopeCircleCheck} />    

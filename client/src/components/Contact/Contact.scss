@@ -75,7 +75,7 @@
   }
 }
 .contact-container-main-form{
-  background-color: rgb(245, 245, 245);
+  background-color: rgb(255, 255, 255);
   width: 50%;
   padding: 19px 30px 19px 30px;
   border-radius: 5%;
@@ -96,6 +96,7 @@
     
 
   }
+  
   textarea{
     border: 1px solid;
     height: 12rem;
@@ -115,6 +116,20 @@
     &:hover { 
       box-shadow: 0 10px 15px 0 rgba(230, 40, 2, 0.6);
     }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .contact-container-main{
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .contact-container{
+    height: 120rem;
+  }
+  .contact-initial-text{
+    right: 0;
+    margin-right: 10px;
   }
 }
   
