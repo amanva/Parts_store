@@ -137,4 +137,34 @@ h1{
         }
     }
   }
+  @media screen and (max-width: 440px) {
+    
+    .navbar{
+        font-size: 8px;
+        &-links{
+            position: relative;
+            gap: .5rem;
+            right: 110px;
+        }
+        h1{
+            font-size: 20px;
+        }
+        &-imglogo{
+           position: relative;
+           left: -5px;
+            width: 2rem;
+        }
+        padding: 0px;
+    }
+    .navbar-buttons{
+        position: relative;
+        padding: 0px;
+        gap: 1px;
+        right: 120px;
+        width: 130px;
+        .link-button{
+            font-size: 10px;
+        }
+    }
+  }
 

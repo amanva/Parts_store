@@ -25,24 +25,20 @@
   // align-content: center;
 }
 .product {
-  // display: grid;
-  // grid-template-rows: 70% 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
   position: relative;
   border-radius: 0px;
-  // width: 300px;
-  // height: 350px;
-
   margin:20px ;
   background-color: white;
-
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
   border: .5px solid rgb(0, 0, 0);
-  // border-radius: 0px;
-
   
+}
+.product img {
+  width: 400px;
 }
 .price{
   color:red;
@@ -83,8 +79,8 @@
 // }
 
 .product .description {
-  // background-color: #fdd7d7;
-  // border-radius: 11px;
+    text-align: center;
+  
   
   margin-top: 10px; /* Add some space between the image and description */
   .salePrice{
@@ -152,3 +148,11 @@
     grid-template-columns: 1fr; /* Change to 2 columns */
   }
 }
+
+
+
+
+
+
+
+

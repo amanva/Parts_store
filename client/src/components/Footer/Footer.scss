@@ -93,3 +93,14 @@ width: 100%;
     }
 
 }
+
+
+@media screen and (max-width: 400px) {
+    .email-input{
+        input{
+            width: 200px;
+            border-radius: 0%;
+        }
+    }
+    
+}
