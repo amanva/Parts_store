@@ -36,8 +36,8 @@ function Team(){
 <div className="container">
 <div className="team-container">
     <div className="team-text">
-        <h1>Check out what our customers have said about us.</h1>
-        <p>When you read our testimonies, you embark on a journey of trust-building. You can hear the voices of our loyal customers, sharing their stories and affirming their confidence in our brand. Each testimony .</p>
+        <h1>Check out what our Awesome Team.</h1>
+        <p>At GHG, we are more than just a team. We are a diverse group of individuals that are dedicated to providing the best customer service.</p>
 </div>
 <div className="team-box">
 {testimonials.map((testimonial, index) => (

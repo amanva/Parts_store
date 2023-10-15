@@ -171,3 +171,42 @@
 
 }
 }
+
+@media screen and (max-width: 1780px) {
+  .about{
+    
+    margin-bottom: 850px;
+  }
+  .clients-box-content{
+    display: flex;
+    flex: wrap;
+  }
+  .clients-box{
+    height: 700px;
+  }
+  .aboutItems{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .secondBox-outerContainer{
+    display: flex;
+    flex-wrap: wrap;
+    
+  }
+  .secondBox-outerContainer-inner2{
+    width: 200px;
+    justify-content: left;
+    .leftText{
+      width: 200px;
+    }
+  }
+  .secondBox-outerContainer-inner1{
+    width: 200px;
+    .leftText{
+      width: 200px;
+    }
+  }
+  // .c{
+  //   // height: 700px;
+  // }
+}

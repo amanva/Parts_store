@@ -9,6 +9,7 @@ const flash = require('express-flash')
 const bodyParser = require('body-parser');
 const cookieParser = require("cookie-parser");
 const app = express();
+const fs = require('fs'); // Import the fs module
 
 
 initializePassport(passport)
@@ -27,10 +28,13 @@ app.use(session({
   app.use(flash())
 
 const db = mysql.createPool({
-    host:'localhost',
-    user: 'root',
-    password: '',
-    database: 'aps'
+    host:'gearheadgarage1.mysql.database.azure.com',
+    user: 'gearheadgarage',
+    password: 'ghg1234!',
+    database: 'aps',
+    ssl: {
+      ca: fs.readFileSync('C:/Users/pandh/GitHub/Parts_store/server/DigiCertGlobalRootCA.crt.pem'), // Provide the path to the CA certificate
+  },
     
 })
 

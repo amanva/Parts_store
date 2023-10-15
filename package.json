@@ -25,6 +25,7 @@
     "@react-three/fiber": "^8.13.0",
     "ejs": "^3.1.9",
     "font-awesome": "^4.7.0",
+    "mssql": "^10.0.1",
     "node-fetch": "^2.6.11",
     "openai": "^3.3.0",
     "phosphor-react": "^1.4.1",
@@ -57,6 +58,6 @@
     "postcss": "^8.4.30",
     "sass": "^1.62.1",
     "tailwindcss": "^3.3.3",
-    "vite": "^4.4.9"
+    "vite": "^4.4.11"
   }
 }

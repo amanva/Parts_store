@@ -16,7 +16,7 @@
     // grid-template-rows: repeat(1, minmax(0,1fr));
     border: .5px solid gray;
     background-color: white;
-    height: auto;
+  
 
   }
   
@@ -28,19 +28,10 @@
     margin: auto;
     height: 200px;
     width: 200px;
+    
+  }
 
 
-  }
-@media screen and (max-width: 800px) {
-  .galleryWrap {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media screen and (max-width: 750px) {
-  .galleryWrap {
-    grid-template-columns: 1fr;
-  }
-}
 
   .nameForPart{
     display: grid;
@@ -71,8 +62,7 @@
 
 
 .wording {
-	-webkit-background-clip: text;
-	background-clip: text;
+
 	color: black;
   padding-bottom: 100px;
 }
@@ -81,6 +71,7 @@
   font-family: Poppins,sans-serif;
   font-size: 4.2rem;
   margin: 0 auto;
+  width: 100%;
 }
 
 .wording h2
@@ -89,4 +80,37 @@
   font-size: 2.2rem;
   margin: 0 auto;
   padding-bottom: 10px;
+}
+
+@media screen and (max-width: 980px) {
+  .galleryWrap {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 750px) {
+  .galleryWrap {
+  
+    grid-template-columns: 1fr;
+  }
+  .wording h3
+{
+  font-size: 2.2rem;
+  
+}
+
+.wording h2
+{
+  font-size: 1rem;
+
+}
+
+}
+
+@media screen and (max-width: 550px) {
+  
+  .galleryWrap .single .image{
+    
+    width: auto;
+    height: auto;
+  }
 }
