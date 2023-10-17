@@ -1,5 +1,5 @@
 import './index.scss'
-import Model from "../Car";
+// import Model from "../Car";
 import { Canvas, useFrame } from 'react-three-fiber';
 import React, { Suspense, useRef } from "react";
 import { OrbitControls } from "@react-three/drei";
