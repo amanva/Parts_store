@@ -15,28 +15,22 @@ function SearchBar ({onDataFromChild, name}) {
 
 
     const handleSubmit = async (value) => {
-      if(value === name){
+      if (value === name) {
         setSearchInput("");
-      }
-      else{
+      } else {
         setSearchInput(value);
       }
-      try{
-      await fetch('https://gearheadgarage.azurewebsites.net/Shop/searchWord', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            searchWord: value,
-          }),
-        })
-        // name = null;
-      fetchAllBooks()}
-        catch(error){
-          console.log("ERRRORO");
-        }
-  };
+    
+      try {
+        await axios.post('https://gearheadgarage.azurewebsites.net/Shop/searchWord', {
+          searchWord: value,
+        });
+    
+        fetchAllBooks();
+      } catch (error) {
+        console.log("ERROR");
+      }
+    };
 
   const fetchAllBooks = async () => {
     try {
