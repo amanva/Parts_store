@@ -11,6 +11,7 @@ const cookieParser = require("cookie-parser");
 const app = express();
 const fs = require('fs'); // Import the fs module
 
+// const https = require('https');
 
 initializePassport(passport)
 
@@ -37,6 +38,7 @@ const db = mysql.createPool({
   },
     
 })
+
 
 var exists = "";
 app.post('/register',  async (req,res)=>{
@@ -180,8 +182,8 @@ app.get('/Shop/searchWord', async (req, res) => {
 });
 
 
-
-app.listen(3001, () => {
-console.log("running on port 3001");
+const port = process.env.PORT || 3000;
+app.listen(443, () => {
+console.log("running on port ${port}");
 
 });

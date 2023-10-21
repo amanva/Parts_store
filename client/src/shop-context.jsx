@@ -12,7 +12,7 @@ export const ShopContextProvider = (props) => {
     // Fetch and set itemData here
     const fetchItemData = async () => {
       try {
-        const response = await axios.get("http://gearheadgarage.azurewebsites.net/Shop/searchWord");
+        const response = await axios.get("https://gearheadgarage.azurewebsites.net/Shop/searchWord");
         setItemData(response.data);
       } catch (err) {
         console.log(err);
@@ -98,7 +98,7 @@ export const ShopContextProvider = (props) => {
 
   const handleSubmit = async () => {
     try {
-      await fetch("http://gearheadgarage.azurewebsites.net/Shop/searchWord", {
+      await fetch("https://gearheadgarage.azurewebsites.net/Shop/searchWord", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -115,7 +115,7 @@ export const ShopContextProvider = (props) => {
 
   const fetchAllBooks = async () => {
     try {
-      const response = await axios.get("http://gearheadgarage.azurewebsites.net/Shop/searchWord");
+      const response = await axios.get("https://gearheadgarage.azurewebsites.net/Shop/searchWord");
       setItemData(response.data);
     } catch (err) {
       console.log(err);

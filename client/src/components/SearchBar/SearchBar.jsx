@@ -22,7 +22,7 @@ function SearchBar ({onDataFromChild, name}) {
         setSearchInput(value);
       }
       try{
-      await fetch('http://gearheadgarage.azurewebsites.net/Shop/searchWord', {
+      await fetch('https://gearheadgarage.azurewebsites.net/Shop/searchWord', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ function SearchBar ({onDataFromChild, name}) {
 
   const fetchAllBooks = async () => {
     try {
-      await axios.get("http://gearheadgarage.azurewebsites.net/Shop/searchWord").then(response => {
+      await axios.get("https://gearheadgarage.azurewebsites.net/Shop/searchWord").then(response => {
         // console.log(response.data);
         setBooks(response.data);
         // console.log(books);
