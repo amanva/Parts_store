@@ -17,7 +17,7 @@ function Login() {
 
 	const handleSubmit = async (e) => {
         e.preventDefault();
-        await fetch('http://gearheadgarage.azurewebsites.net/login', {
+        await fetch('https://gearheadgarage.azurewebsites.net/login', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ function Login() {
     
     const getForm = async () => {
         try {
-          await axios.get("http://gearheadgarage.azurewebsites.net/login").then(response => {
+          await axios.get("https://gearheadgarage.azurewebsites.net/login").then(response => {
             setIsLoginValid(response.data.value);
             setIsCorrect(response.data.incorrect);
           })
@@ -43,7 +43,7 @@ function Login() {
 
       const handleLogOut = async (e) => {
         e.preventDefault();
-        await fetch('http://gearheadgarage.azurewebsites.net/logout', {
+        await fetch('https://gearheadgarage.azurewebsites.net/logout', {
             method: 'DELETE',
             headers: {
               'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ return(
     <div className="login-box">
             <h2 className="mb-7 font-semibold">Sign in to Gear Head Garage</h2>
             {isCorrect == "" ? <></>: <h2 className="mb-7 font-semibold">{isCorrect}</h2>}
-        <form className="login-form" action = 'http://gearheadgarage.azurewebsites.net/login' onSubmit={handleSubmit} method="POST">
+        <form className="login-form" action = 'https://gearheadgarage.azurewebsites.net/login' onSubmit={handleSubmit} method="POST">
             <div className="userEmail">
             <label className={email ? 'valueapply' : 'log-label'} htmlFor="email">Email</label>
             <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder=" " id="email" name="email" />
@@ -79,7 +79,7 @@ return(
         
     </div>
     : <div className="login-box">
-      <form className="login-form" action = 'http://gearheadgarage.azurewebsites.net/logout' onSubmit={handleLogOut} method="DELETE">
+      <form className="login-form" action = 'https://gearheadgarage.azurewebsites.net/logout' onSubmit={handleLogOut} method="DELETE">
       <h2 className="mb-7 font-semibold">Sign in to Gear Head Garage</h2> 
     <button type="submit" class="bg-gradient-to-r from-red-500 to-red-700 hover:from-red-700 hover:to-red-900 text-white font-bold py-2 px-4 rounded-full mb-3">Log Out</button>
     </form>
