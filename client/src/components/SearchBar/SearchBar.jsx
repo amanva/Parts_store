@@ -22,7 +22,7 @@ function SearchBar ({onDataFromChild, name}) {
       }
     
       try {
-        await axios.post('/Shop/searchWord', {
+        await axios.post('https://gearheadgarage.azurewebsites.net/Shop/searchWord', {
           searchWord: value,
         });
     
@@ -34,7 +34,7 @@ function SearchBar ({onDataFromChild, name}) {
 
   const fetchAllBooks = async () => {
     try {
-      await axios.get("/Shop/searchWord").then(response => {
+      await axios.get("https://gearheadgarage.azurewebsites.net/Shop/searchWord").then(response => {
         // console.log(response.data);
         setBooks(response.data);
         // console.log(books);
