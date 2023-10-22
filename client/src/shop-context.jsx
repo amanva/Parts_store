@@ -98,7 +98,7 @@ export const ShopContextProvider = (props) => {
 
   const handleSubmit = async () => {
     try {
-      await fetch("https://gearheadgarage.azurewebsites.net/Shop/searchWord", {
+      await fetch("/Shop/searchWord", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -115,7 +115,7 @@ export const ShopContextProvider = (props) => {
 
   const fetchAllBooks = async () => {
     try {
-      const response = await axios.get("https://gearheadgarage.azurewebsites.net/Shop/searchWord");
+      const response = await axios.get("Shop/searchWord");
       setItemData(response.data);
     } catch (err) {
       console.log(err);
