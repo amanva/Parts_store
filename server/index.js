@@ -117,7 +117,7 @@ app.get("/register", (req, res, next) => {
 
 let globalVariable = "";
 
-app.post('/Shop/searchWord', async (req, res) => {
+app.post('https://gearheadgarage.azurewebsites.net/Shop/searchWord', async (req, res) => {
     const word = req.body.searchWord;
     const sqlInsert = `
         SELECT * FROM rims WHERE Part_Name LIKE ? 
@@ -150,7 +150,7 @@ app.post('/Shop/searchWord', async (req, res) => {
     }
 });
 
-app.get('/Shop/searchWord', async (req, res) => {
+app.get('https://gearheadgarage.azurewebsites.net/Shop/searchWord', async (req, res) => {
     const word = globalVariable;
     const sqlInsert = `
         SELECT * FROM rims WHERE Part_Name LIKE ? 
