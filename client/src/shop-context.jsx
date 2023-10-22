@@ -96,21 +96,20 @@ export const ShopContextProvider = (props) => {
     getData,
   };
 
-  const handleSubmit = async (value) => {
-    if (value === name) {
-      setSearchInput("");
-    } else {
-      setSearchInput(value);
-    }
-  
+  const handleSubmit = async () => {
     try {
-      await axios.post('https://gearheadgarage.azurewebsites.net/Shop/searchWord', {
-        searchWord: value,
+      await fetch("https://localhost:3001/Shop/searchWord", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          searchWord: "",
+        }),
       });
-  
       fetchAllBooks();
     } catch (error) {
-      console.log("ERROR");
+      console.log("ERRRORO");
     }
   };
 
