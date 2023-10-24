@@ -38,7 +38,13 @@ const db = mysql.createPool({
   },
     
 })
-
+db.connect((err) => {
+  if (err) {
+    console.error('Error connecting to Azure MySQL:', err);
+    return;
+  }
+  console.log('Connected to Azure MySQL database');
+});
 
 var exists = "";
 app.post('/register',  async (req,res)=>{
