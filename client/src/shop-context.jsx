@@ -98,7 +98,7 @@ export const ShopContextProvider = (props) => {
 
   const handleSubmit = async () => {
     try {
-      await fetch("https://https://gearheadgarage.azurewebsites.net/Shop/searchWord", {
+      await fetch("https://gearheadgarage.azurewebsites.net/Shop/searchWord", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
