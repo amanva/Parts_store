@@ -98,7 +98,7 @@ export const ShopContextProvider = (props) => {
 
   const handleSubmit = async () => {
     try {
-      await fetch("https://gearheadgarage.azurewebsites.net/Shop/searchWord", {
+      const response = await fetch("https://gearheadgarage.azurewebsites.net/Shop/searchWord", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -107,9 +107,17 @@ export const ShopContextProvider = (props) => {
           searchWord: "",
         }),
       });
-      fetchAllBooks();
+  
+      if (response.ok) {
+        // If the response status is in the range 200-299, it's a successful response.
+        // You can perform further actions here.
+        await fetchAllBooks(); // Call your fetchAllBooks function if needed.
+      } else {
+        // Handle the error here if it's not a successful response.
+        console.log("Request failed with status code " + response.status);
+      }
     } catch (error) {
-      console.log("ERRRORO");
+      console.log("Error:", error);
     }
   };
 
