@@ -32,7 +32,7 @@ const db = mysql.createPool({
     password: 'ghg1234!',
     database: 'aps',
     ssl: {
-        ca: fs.readFileSync('C:/Users/pandh/GitHub/Parts_store/server/DigiCertGlobalRootCA.crt.pem'), // Provide the path to the CA certificate
+        ca: fs.readFileSync('./DigiCertGlobalRootCA.crt.pem'), // Provide the path to the CA certificate
     },
 });
 
