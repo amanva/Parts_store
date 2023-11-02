@@ -11,7 +11,7 @@ export default defineConfig({
   }),
     react()],
     server: {
-      port: 3000,
+      port: 443,
       host: true,
   },
   build: {

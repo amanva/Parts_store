@@ -189,7 +189,7 @@ app.get('/Shop/searchWord', async (req, res) => {
 });
 
 
-const port = process.env.PORT || 3000; // Use port 3000 if PORT is not defined
+const port = process.env.PORT || 3001; // Use port 3000 if PORT is not defined
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
