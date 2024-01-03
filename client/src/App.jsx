@@ -33,7 +33,7 @@ function App() {
         <Route path = "contact" element={<Contact></Contact>} />
         <Route path = "login" element={<Login></Login>} />
         <Route path = "register" element={<Register></Register>} />
-        <Route path = "/Shop/:type" element={<Shop></Shop>} />  
+        <Route path="/Shop/:searchWord" element={<Shop />} />
       </Routes>
       <Cart cartOpen={isOpen} toggleCart={ToggleSidebar}/> 
       <Chat/>

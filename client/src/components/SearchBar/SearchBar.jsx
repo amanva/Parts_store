@@ -20,9 +20,10 @@ function SearchBar ({onDataFromChild, name}) {
       }
     
       try {
-        await axios.post('https://gearheadgarage.azurewebsites.net/Shop/searchWord', {
+        await axios.post('/Shop/:searchWord', {
           searchWord: value,
         });
+        
     
         fetchAllBooks();
       } catch (error) {
