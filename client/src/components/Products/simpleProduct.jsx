@@ -7,9 +7,7 @@ export const simpleProduct =(props, sort) =>{
     const{id, Part_Name, R_Price, R_Image, Sale, R_Sale_Amount, R_Quantity, Width} = props.data;
     const pricing =  Sale === 1 ? 'salePrice' : 'noSalePrice';
     const saleImage =  Sale === 1 ? 'sale' : 'noSalePrice';
-    
     const { addToCart, cartItems } = useContext(ShopContext);
-
     const cartItemCount = cartItems[id];
     const newWidth = `w-${Width}`;
     return (

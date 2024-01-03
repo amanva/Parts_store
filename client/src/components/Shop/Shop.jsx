@@ -18,7 +18,6 @@ const Shop = () => {
     const handleDataFromChild = (data) => {
         // console.log("Parent Child connection established"); 
         setBooks(data);
-        
         setSortedBooks(data);
       };
       const [shouldSort, setShouldSort] = useState(false); // State to control sorting
@@ -45,12 +44,10 @@ const Shop = () => {
 
     const {type} = useParams();
     const handleSelectChange = (event) => {
-
         setSelectedValue(event.target.value);
     }
     return <>
     <Begin names = "Shop"/>
-    
     <div className="container">
                 <div className='shopTitle'>
                     <h1>Shop Now</h1>
@@ -58,9 +55,7 @@ const Shop = () => {
         <div className="searchBar">
             <SearchBar onDataFromChild = {handleDataFromChild} name = {type}></SearchBar>
             <FormControl style={{ marginLeft: '-150px' }}>
-
                 <InputLabel>Filter</InputLabel>
-
                 <Select 
                     sx={{
                     width: 190,

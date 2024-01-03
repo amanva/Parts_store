@@ -13,8 +13,8 @@ import Cart from "./components/Cart/Cart";
 import { useState } from "react";
 import { ShopContextProvider } from "./shop-context";
 import Shop from "./components/Shop/Shop";
-function App() {
 
+function App() {
   const [isOpen, setIsopen] = useState(false);
   const ToggleSidebar = () => {
       isOpen === true ? setIsopen(false) : setIsopen(true);
@@ -23,7 +23,7 @@ function App() {
   return (
     <>
     <ShopContextProvider>
-    {/* <SearchBar> */}
+    {/* <SearchBar> */} 
     <Nav cartFunction={ToggleSidebar}/>
     <Routes>
         <Route index path = "/" element={<Hero></Hero>} />
@@ -33,9 +33,9 @@ function App() {
         <Route path = "contact" element={<Contact></Contact>} />
         <Route path = "login" element={<Login></Login>} />
         <Route path = "register" element={<Register></Register>} />
-        <Route path = "/Shop/:type" element={<Shop></Shop>} />
+        <Route path = "/Shop/:type" element={<Shop></Shop>} />  
       </Routes>
-      <Cart cartOpen={isOpen} toggleCart={ToggleSidebar}/>
+      <Cart cartOpen={isOpen} toggleCart={ToggleSidebar}/> 
       <Chat/>
       {/* </SearchBar> */}
       </ShopContextProvider>

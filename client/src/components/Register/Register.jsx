@@ -26,7 +26,6 @@ function Register() {
               password: pass,
             }),
           })
-
           getUser();
           
       }

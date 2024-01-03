@@ -18,7 +18,6 @@ export const ShopContextProvider = (props) => {
         console.log(err);
       }
     };
-
     fetchItemData();
   }, []);
 
@@ -26,11 +25,9 @@ export const ShopContextProvider = (props) => {
     // Define the getDefaultCart function
     const getDefaultCart = () => {
       let cart = {};
-
       itemData.forEach((data) => {
         cart[data.Part_Name] = 0;
       });
-
       return cart;
     };
 
@@ -62,7 +59,6 @@ export const ShopContextProvider = (props) => {
       ...prev,
       [itemIdString]: parseInt(prev[itemIdString], 10) + 1, // Parse as an integer
     }));
-
     setTotalItems(totalItems + 1);
   };
 
@@ -80,7 +76,6 @@ export const ShopContextProvider = (props) => {
     for (const item in cartItems) {
       updatedCart[item] = 0;
     }
-  
     setCartItems(updatedCart);
     setTotalItems(0);
   };
@@ -123,7 +118,7 @@ export const ShopContextProvider = (props) => {
 
   const fetchAllBooks = async () => {
     try {
-      const response = await axios.get("https://gearheadgarage.azurewebsites.net/Shop/searchWord");
+      const response = await axios.get("https://gearheadgarage.azurewebsites.net/Shop/searchWord");//"https://gearheadgarage.azurewebsites.net/Shop/searchWord"
       setItemData(response.data);
     } catch (err) {
       console.log(err);
