@@ -1,5 +1,8 @@
 import './index.scss'
+// import Model from "../Car";
+import { Canvas, useFrame } from 'react-three-fiber';
 import React, { Suspense, useRef } from "react";
+import { OrbitControls } from "@react-three/drei";
 import Spoiler from "../../assets/wing.jpg";
 import intake from "../../assets/intake.png";
 import exhaust from "../../assets/exhaust.jpg";

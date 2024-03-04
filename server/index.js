@@ -29,14 +29,12 @@ app.use(passport.session());
 app.use(flash());
 
 const db = mysql.createPool({
-    host: 'gearheadgarage1.mysql.database.azure.com',
-    user: 'gearheadgarage@gearheadgarage1',
-    password: 'ghg1234!',
-    database: 'aps',
-    ssl: {
-        ca: fs.readFileSync('./DigiCertGlobalRootCA.crt.pem'), // Provide the path to the CA certificate
-    },
-});
+  host:'localhost',
+  user: 'root',
+  password: '',
+  database: 'aps'
+})
+
 
 db.getConnection((err, connection) => {
     if (err) {
