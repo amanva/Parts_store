@@ -6,7 +6,7 @@
 
 .searchInputs {
 display:grid;
-width: 400px;
+width: 500px;
 grid-template-columns: 80% 20%;
 }
 
@@ -17,9 +17,3 @@ background-color: white;
 display: grid;
 place-items: center;
 }
-
-@media screen and (max-width: 650px) {
-    .searchInputs{
-        width: 200px;
-    }
-  }

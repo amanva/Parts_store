@@ -69,11 +69,11 @@
   justify-content: center;
   
 }
-// .imageContainer{
-//   position: absolute;
-//   // width: 200px;
-//   height: 200px;
-// }
+.imageContainer{
+  position: absolute;
+  // width: 200px;
+  height: 200px;
+}
 
 .product .description {
     text-align: center;
@@ -130,6 +130,7 @@
 //   border-radius: 15px;
 // }
 
+<<<<<<< HEAD:client/src/components/Products/product.scss
 @media screen and (max-width: 1400px) {
   .products {
     grid-template-columns: 1fr 1fr 1fr; /* Change to 2 columns */
@@ -153,3 +154,10 @@
 
 
 
+=======
+// .addToCartBttn:hover {
+//   background-color: rgb(19, 19, 19);
+//   color: white;
+//   cursor: pointer;
+// }
+>>>>>>> parent of 16c54dfa (Merge branch 'version2'):src/components/Products/product.scss

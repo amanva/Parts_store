@@ -20,7 +20,7 @@ function Hero(){
   const galleryImages =[
     {
       img: Spoiler,
-      name: 'SPOILER',
+      name: 'Spoiler',
       text: 'Used to add downforce to vehicle'
     },
     {

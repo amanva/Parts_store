@@ -6,7 +6,6 @@ function Footer(){
     return (
     
     <footer className="footerContainer">
-        <div className="headfooter">
         <div className="container">
         <div className="information-container">
     <div className="information">
@@ -30,7 +29,6 @@ function Footer(){
             </div>
         </div>
         </div>
-    </div>
     </div>
     </div>
     </div>

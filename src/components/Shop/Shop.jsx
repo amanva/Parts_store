@@ -54,6 +54,7 @@ const Shop = () => {
                 </div>
         <div className="searchBar">
             <SearchBar onDataFromChild = {handleDataFromChild} name = {type}></SearchBar>
+<<<<<<< HEAD:client/src/components/Shop/Shop.jsx
             <FormControl style={{ marginLeft: '-150px' }}>
                 <InputLabel>Filter</InputLabel>
                 <Select 
@@ -69,6 +70,26 @@ const Shop = () => {
                     <MenuItem defaultValue = {1} value={'3'}>Sort By Quantity: Low To High</MenuItem>
                     <MenuItem defaultValue = {1} value={'4'}>Sort By Quantity: High To Low</MenuItem>
                 </Select>
+=======
+            <FormControl style={{ marginLeft: '-240px' }}>
+
+            <InputLabel className='label'>Filter</InputLabel>
+
+            <Select 
+                sx={{
+                width: 240,
+                height: 50,
+                marginTop: 0.8,
+                }}
+                value={selectedValue}
+                onChange={handleSelectChange}
+            >
+                <MenuItem defaultValue = {1} value={'1'}>Sort By Price: Low To High</MenuItem>
+                <MenuItem defaultValue = {1} value={'2'}>Sort By Price: High To Low</MenuItem>
+                <MenuItem defaultValue = {1} value={'3'}>Sort By Quantity: Low To High</MenuItem>
+                <MenuItem defaultValue = {1} value={'4'}>Sort By Quantity: High To Low</MenuItem>
+            </Select>
+>>>>>>> parent of 16c54dfa (Merge branch 'version2'):src/components/Shop/Shop.jsx
             </FormControl>
         </div>
         <div className='products'>{sortedBooks.map((book) => <Product data = {book}></Product> )}</div>
