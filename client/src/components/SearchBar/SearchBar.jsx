@@ -48,8 +48,6 @@ function SearchBar ({onDataFromChild, name}) {
     onDataFromChild(books);
     setLoading(false);
   }
- 
-
   
   // Set the initial value of searchInput
   useEffect(() => {

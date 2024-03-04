@@ -29,7 +29,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
   position: relative;
   border-radius: 0px;
   margin:20px ;
@@ -51,10 +50,8 @@
   }
 }
 .product:hover {
-  
     transform: scale(1.05);
     // filter: none;
-    
   }
 .sale{
     position: absolute;
