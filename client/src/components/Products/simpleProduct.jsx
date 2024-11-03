@@ -10,7 +10,7 @@ export const simpleProduct =(props, sort) =>{
     
     const { addToCart, cartItems } = useContext(ShopContext);
 
-    const cartItemCount = cartItems[id];
+    const cartItemCount = cartItems[Part_Name];
     const newWidth = `w-${Width}`;
     return (
         <div className="product">
@@ -31,7 +31,7 @@ export const simpleProduct =(props, sort) =>{
                     </div>
                 </div>
             </div>
-            <button className="addToCartBttn" onClick={() => addToCart(id)}>
+            <button className="addToCartBttn" onClick={() => addToCart(Part_Name)}>
                 Add To Cart {cartItemCount > 0 && <> ({cartItemCount})</>}
             </button>
         </div>
