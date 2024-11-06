@@ -15,7 +15,7 @@ export const simpleProduct =(props, sort) =>{
     return (
         <div className="product">
             <div className="images">
-            <div style={{ width: `${Width}px` }}>
+            <div style={{ width: 100 }}>
                 <img className="w-4 h-auto" src={R_Image} alt="Product Image" />  
                 </div>
             </div>
