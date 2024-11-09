@@ -8,13 +8,14 @@ export const simpleProduct =(props, sort) =>{
     const pricing =  Sale === 1 ? 'salePrice' : 'noSalePrice';
     const saleImage =  Sale === 1 ? 'sale' : 'noSalePrice';
     const { addToCart, cartItems } = useContext(ShopContext);
-    const cartItemCount = cartItems[id];
+
+    const cartItemCount = cartItems[Part_Name];
     const newWidth = `w-${Width}`;
     return (
         <div className="product">
             <div className="images">
-                <div className={`${newWidth}`}>
-                <img src={R_Image} alt="Product Image" />  
+            <div style={{ width: 100 }}>
+                <img className="w-4 h-auto" src={R_Image} alt="Product Image" />  
                 </div>
             </div>
             <div className={saleImage}>
@@ -29,7 +30,7 @@ export const simpleProduct =(props, sort) =>{
                     </div>
                 </div>
             </div>
-            <button className="addToCartBttn" onClick={() => addToCart(id)}>
+            <button className="addToCartBttn" onClick={() => addToCart(Part_Name)}>
                 Add To Cart {cartItemCount > 0 && <> ({cartItemCount})</>}
             </button>
         </div>

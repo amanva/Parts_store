@@ -35,7 +35,7 @@ export const ShopContextProvider = (props) => {
     setCartItems(getDefaultCart());
   }, [itemData]);
 
-  console.log(cartItems);
+  // console.log(cartItems);
 
   const getTotalCartAmount = () => {
     let totalAmount = 0;
@@ -54,7 +54,7 @@ export const ShopContextProvider = (props) => {
 
   const addToCart = (itemId) => {
     const itemIdString = String(itemId); // Convert to string
-
+      console.log(itemId);
     setCartItems((prev) => ({
       ...prev,
       [itemIdString]: parseInt(prev[itemIdString], 10) + 1, // Parse as an integer

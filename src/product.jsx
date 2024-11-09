@@ -6,7 +6,7 @@ export const Product = (props) => {
   const { addToCart, cartItems } = useContext(ShopContext);
 
   const cartItemCount = cartItems[id];
-
+  console.log("test");
   return (
     <div className="product">
       <img src={productImage} />
