@@ -7,9 +7,9 @@ const session = require('express-session');
 const bcrypt = require('bcrypt')
 const flash = require('express-flash')
 const bodyParser = require('body-parser');
-const cookieParser = require("cookie-parser");
+const cookieParser = require("cookie-parser")
+require('dotenv').config({ path: '../.env' }); 
 const app = express();
-
 
 initializePassport(passport)
 
@@ -17,22 +17,23 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cors()); 
 app.use(session({
-    secret: "secretcode",
+    secret: process.env.SECRET_CODE,
     resave: false,
     saveUninitialized: false
   }))
-  app.use(cookieParser("secretcode"));
+  app.use(cookieParser(process.env.SECRET_CODE));
   app.use(passport.initialize())
   app.use(passport.session())
   app.use(flash())
 
 const db = mysql.createPool({
-    host:'localhost',
-    user: 'root',
-    password: '',
-    database: 'aps'
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB
     
 })
+
 
 var exists = "";
 app.post('/register',  async (req,res)=>{
@@ -122,9 +123,7 @@ app.post('/Shop/searchWord', async (req, res) => {
         UNION SELECT * FROM brakes WHERE Part_Name LIKE ? 
         UNION SELECT * FROM exhaust WHERE Part_Name LIKE ?;
     `;
-
     globalVariable = word;
-
 
     try {
         const [rows] = await db.execute(sqlInsert, [
@@ -177,7 +176,7 @@ app.get('/Shop/searchWord', async (req, res) => {
 
 
 
-app.listen(3001, () => {
-console.log("running on port 3001");
+app.listen(process.env.PORT, () => {
+console.log("Running on local port");
 
 });
