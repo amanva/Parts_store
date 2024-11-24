@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import Carousel from "react-elastic-carousel";
+// import Carousel from "react-elastic-carousel";
 import Item from "./Item";
 import "./index.scss";
 
@@ -32,7 +32,7 @@ function App() {
       </div> */}
       <hr className="seperator" />
       <div className="carousel-wrapper">
-        <Carousel itemsToShow={3}>
+        {/* <Carousel itemsToShow={3}> */}
             <item><img className ="images" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/2048px-BMW.svg.png"></img></item>
             <item><img className ="images" src="https://www.freeiconspng.com/thumbs/mercedes-benz-logo-png/mercedes-benz-logo-png-6.png"></img></item>
             <item><img className ="images" src="https://upload.wikimedia.org/wikipedia/en/thumb/d/df/Lamborghini_Logo.svg/1200px-Lamborghini_Logo.svg.png"></img></item>
@@ -51,7 +51,7 @@ function App() {
           {/* {items.map((item) => (
             <Item key={item}>{item}</Item>
           ))} */}
-        </Carousel>
+        {/* </Carousel> */}
       </div>
     </div>
   );
