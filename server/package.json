@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "devStart": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "npx update-browserslist-db@latest --force"
   },
   "author": "",
   "license": "ISC",
@@ -27,4 +28,5 @@
     "passport": "^0.6.0",
     "passport-local": "^1.0.0"
   }
+  
 }
