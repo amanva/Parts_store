@@ -1,22 +1,23 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import svgr from "vite-plugin-svgr";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import svgr from 'vite-plugin-svgr';
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     svgr({
       svgrOptions: {
-          ref: true,
+        ref: true,
       },
-  }),
-    react()],
-    server: {
-      port: 10000,
-      host: true,
+    }),
+    react(),
+  ],
+  server: {
+    port: 10000,
+    host: true,
   },
-  base: './Parts_store',
+  base: '/Parts_store/',  // Update base to reflect the GitHub Pages subdirectory
   build: {
-      
-      outDir: "./build",
+    outDir: './build',
   },
-})
+});
