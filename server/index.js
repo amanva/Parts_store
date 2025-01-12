@@ -9,6 +9,8 @@ const flash = require('express-flash')
 const bodyParser = require('body-parser');
 const cookieParser = require("cookie-parser");
 const app = express();
+const fs = require('fs');
+require('dotenv').config();
 
 
 initializePassport(passport)
@@ -26,13 +28,7 @@ app.use(session({
   app.use(passport.session())
   app.use(flash())
 
-const db = mysql.createPool({
-    host:'localhost',
-    user: 'root',
-    password: '',
-    database: 'aps'
-    
-})
+  
 
 var exists = "";
 app.post('/register',  async (req,res)=>{
