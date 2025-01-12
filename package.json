@@ -9,7 +9,6 @@
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "deploy": "gh-pages -d build"
-
   },
   "dependencies": {
     "@chatscope/chat-ui-kit-react": "^1.10.1",
