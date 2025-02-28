@@ -12,6 +12,7 @@ function SearchBar ({onDataFromChild, name}) {
     const [load, setLoad] = useState(true);
     const[firstRender, setFirstRender] = useState(false)
     const[searchInput, setSearchInput] = useState('');
+    const API_URL = "https://parts-store-g123.onrender.com";
 
 
     const handleSubmit = async (value) => {
@@ -22,7 +23,7 @@ function SearchBar ({onDataFromChild, name}) {
         setSearchInput(value);
       }
       try{
-      await fetch('http://localhost:3001/Shop/searchWord', {
+      await fetch(`${API_URL}/Shop/searchWord`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -40,7 +41,7 @@ function SearchBar ({onDataFromChild, name}) {
 
   const fetchAllBooks = async () => {
     try {
-      await axios.get("http://localhost:3001/Shop/searchWord").then(response => {
+      await axios.get(`${API_URL}/Shop/searchWord`).then(response => {
         // console.log(response.data);
         setBooks(response.data);
         // console.log(books);
