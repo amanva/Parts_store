@@ -7,12 +7,12 @@ export const ShopContextProvider = (props) => {
   const [totalItems, setTotalItems] = useState(0);
   const [itemData, setItemData] = useState([]);
   const [cartItems, setCartItems] = useState({}); // Initialize cartItems as an empty object
-
+  const API_URL ="https://parts-store-g123.onrender.com";
   useEffect(() => {
     // Fetch and set itemData here
     const fetchItemData = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/Shop/searchWord");
+        const response = await axios.get(`${API_URL}/Shop/searchWord`); // Use template literals
         setItemData(response.data);
       } catch (err) {
         console.log(err);
@@ -98,7 +98,7 @@ export const ShopContextProvider = (props) => {
 
   const handleSubmit = async () => {
     try {
-      await fetch("http://localhost:3001/Shop/searchWord", {
+      await fetch(`${API_URL}/Shop/searchWord`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -115,7 +115,7 @@ export const ShopContextProvider = (props) => {
 
   const fetchAllBooks = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/Shop/searchWord");
+      const response = await axios.get(`${API_URL}/Shop/searchWord`);
       setItemData(response.data);
     } catch (err) {
       console.log(err);

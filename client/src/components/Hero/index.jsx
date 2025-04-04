@@ -89,7 +89,7 @@ function Hero(){
       <h2>These Are Our Top Manufacturers</h2>
     </div>
     <div>
-        <Company slides={galleryImages}/>
+        {/* <Company slides={galleryImages}/> */}
     </div>
     <Footer/>
 

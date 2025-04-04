@@ -13,10 +13,11 @@ function Register() {
     const [lastName, setLastName] = useState('');
 
     const [userExists, setUserExists] = useState("");
+    const API_URL = "https://parts-store-g123.onrender.com";
 
     const reg = async (e) => {
         e.preventDefault();
-          await fetch('http://localhost:3001/register', {
+          await fetch(`${API_URL}/register`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -32,7 +33,7 @@ function Register() {
       }
       const getUser = async () => {
         try {
-          await axios.get("http://localhost:3001/register").then(response => {
+          await axios.get(`${API_URL}/register`).then(response => {
             setUserExists(response.data);
             console.log(response.data);
           })
@@ -48,7 +49,7 @@ return(
 <div className="auth-form-container">
     <div className="register-box">
             <h2 className="mb-7 font-semibold">Create an account</h2>
-        <form className="register-form" action = 'http://localhost:3001/register' onSubmit={reg}  method="POST">
+        <form className="register-form" action = 'https://parts-store-g123.onrender.com/register' onSubmit={reg}  method="POST">
         {userExists == "" ? <></>: <h2 className="mb-7 font-semibold">{userExists}</h2>}
             <div className="userFirstName">
             <label className={firstName ? 'valueapply' : 'reg-label'} for="userFirstName">First Name</label>
